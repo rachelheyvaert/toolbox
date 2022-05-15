@@ -1,0 +1,27 @@
+{
+    "activities": [
+        {
+            "id": 1,
+            "name": "Puzzles",
+            "area": "Language",
+            "image":"https://m.media-amazon.com/images/I/81E7eW2YeKL._AC_SL1500_.jpg",
+            "description": "Builds new vocabulary by labeling, describing, and answering questions about pieces."
+        },
+        {
+            "id": 2,
+            "name": "Bubbles",
+            "image":"https://s7.orientaltrading.com/is/image/OrientalTrading/VIEWER_ZOOM/small-bubble-wands-12-pc-~12_4927",
+            "area": "Language",
+            "description": "Promote eye contact, reinforcer to encourage requesting, teaching sounds or signs, and to position and strengthen the tongue correctly for the /k/, /g/, and ng sounds."
+            
+        },
+        {
+            "id": 3,
+            "name": "Articulation Station App",
+            "image":"https://www.commonsense.org/education/sites/default/files/experience-media-file/02_artic_station_home.jpg?width=660&height=415&iframe=1&slide=0&scalePhotos=1",
+            "area": "Articulation",
+            "description": "Offers practice at the WORD, PHRASE, SENTENCE and STORY levels for all sounds. Each of the 22 sound programs target sounds in the initial, medial and final positions of words, sentences and stories."
+        }
+    ]
+
+}

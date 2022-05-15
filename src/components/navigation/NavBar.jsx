@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
@@ -15,9 +16,10 @@ const NavBar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Toolbox
           </Typography>
-          <Button color="inherit">Activities List</Button>
-          <Button color="inherit">Planner</Button>
-          <Button color="inherit">Add Activity</Button>
+          <Button color="inherit" component={Link} to="/">Home</Button>
+          <Button color="inherit" component={Link} to="/activities">Activities List</Button>
+          <Button color="inherit" component={Link} to="/activities/planned">Planner</Button>
+          <Button color="inherit" component={Link} to="/activities/add">Add Activity</Button>
         </Toolbar>
         </Container>
       </AppBar>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import NavBar from "./components/navigation/NavBar";
 import Home from "./components/static/Home";
@@ -7,8 +7,10 @@ import ActivitiesList from "./components/ActivitiesList";
 import PlannedActivities from "./components/PlannedActivities";
 
 const App = () => {
+  const [activityList, setActivityList] = useState([])
+
+
   return (
-  
     <Router>
     <NavBar />
     <Routes>
@@ -19,6 +21,7 @@ const App = () => {
     </Routes>
    
     </Router>
+  
   
   
    

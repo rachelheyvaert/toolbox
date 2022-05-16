@@ -17,15 +17,15 @@ const ActivityCard = ({task}) => {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {task.name}
+          <h4> {task.name} </h4>
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {task.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Add to Planner</Button>
         <Button size="small">Delete</Button>
+        <Button size="small">Add to Planner</Button>
       </CardActions>
     </Card>
   );

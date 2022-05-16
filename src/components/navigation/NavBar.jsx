@@ -17,7 +17,7 @@ const NavBar = () => {
             Toolbox
           </Typography>
           <Button color="inherit" component={Link}  to="/">Home</Button>
-          <Button color="inherit" component={Link}  to="/activities">Activities List</Button>
+          <Button color="inherit" component={Link}  to="/activitieslist">Activities List</Button>
           <Button color="inherit" component={Link} to="/activities/planned">Planner</Button>
           <Button color="inherit" component={Link} to="/activities/add">Add Activity</Button>
         </Toolbar>

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { Routes, Route} from "react-router-dom";
 import NavBar from "./components/navigation/NavBar";
 import Home from "./components/static/Home";
@@ -6,15 +6,15 @@ import AddActivity from "./components/AddActivity"
 import ActivitiesList from "./components/ActivitiesList";
 import PlannedActivities from "./components/PlannedActivities";
 
-const App = () => {
-  const [activityList, setActivityList] = useState([])
 
+const App = () => {
+  
 return (
   <div>
   <NavBar />
   <Routes>
     <Route path="/" element= {<Home/>} />
-    <Route path="/activities" element={<ActivitiesList />}/>
+    <Route path="/activitieslist" element={<ActivitiesList />}/>
     <Route path="/activities/add" element={<AddActivity />} />
     <Route path="/activities/planned" element={<PlannedActivities />} />
   </Routes>

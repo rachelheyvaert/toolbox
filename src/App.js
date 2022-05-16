@@ -10,6 +10,7 @@ const baseUrl = `http://localhost:3001/activities`
 
 const App = () => {
   const [activityList, setActivityList] = useState([])
+  const [plannedTasks, setPlannedTasks] = useState([])
 
   useEffect(()=> {
     fetch(baseUrl)
@@ -21,9 +22,9 @@ return (
   <NavBar />
   <Routes>
     <Route path="/" element= {<Home/>} />
-    <Route path="/activitieslist" element={<ActivitiesList  activityList={activityList} />}/>
+    <Route path="/activitieslist" element={<ActivitiesList  plannedTasks={plannedTasks}activityList={activityList} setPlannedTasks={setPlannedTasks}/>}/>
     <Route path="/activities/add" element={<AddActivity />} />
-    <Route path="/activities/planned" element={<PlannedActivities />} />
+    <Route path="/activities/planned" element={<PlannedActivities plannedTasks={plannedTasks}/>} />
   </Routes>
  
   </div>

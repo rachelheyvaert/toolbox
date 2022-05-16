@@ -2,6 +2,7 @@
     "activities": [
         {
             "id": 1,
+            "isPlanned": false,
             "name": "Puzzles",
             "area": "Language",
             "image":"https://m.media-amazon.com/images/I/81E7eW2YeKL._AC_SL1500_.jpg",
@@ -9,6 +10,7 @@
         },
         {
             "id": 2,
+            "isPlanned": false,
             "name": "Bubbles",
             "image":"https://s7.orientaltrading.com/is/image/OrientalTrading/VIEWER_ZOOM/small-bubble-wands-12-pc-~12_4927",
             "area": "Language",
@@ -17,6 +19,7 @@
         },
         {
             "id": 3,
+            "isPlanned": false,
             "name": "Articulation Station App",
             "image":"https://www.commonsense.org/education/sites/default/files/experience-media-file/02_artic_station_home.jpg?width=660&height=415&iframe=1&slide=0&scalePhotos=1",
             "area": "Articulation",

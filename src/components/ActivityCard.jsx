@@ -8,8 +8,14 @@ import Typography from '@mui/material/Typography';
 import { color } from '@mui/system';
 
 const ActivityCard = ({task}) => {
+
+// function handleClick(e){
+//     console.log("target", e.target.value.parentElement)
+//     handleAddToPlanner(e.target.value)
+// }
+
   return (
-    <Card sx={{ maxWidth: 345, margin : '50px'}}>
+    <Card id={task.id} sx={{ maxWidth: 345, margin : '50px'}}>
       <CardMedia
         component="img"
         height="140"
@@ -26,7 +32,7 @@ const ActivityCard = ({task}) => {
       </CardContent>
       <CardActions>
         <Button size="small">Delete</Button>
-        <Button size="small">Add to Planner</Button>
+        <Button  size="small">Add to Planner</Button>
       </CardActions>
     </Card>
   );

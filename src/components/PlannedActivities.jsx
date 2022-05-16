@@ -1,8 +1,11 @@
 import React from 'react'
 
-const PlannedActivities = () => {
+const PlannedActivities = ({plannedTasks}) => {
+  console.log(plannedTasks)
   return (
-    <div>PlannedActivities</div>
+    <div>Planned Activities
+     
+    </div>
   )
 }
 

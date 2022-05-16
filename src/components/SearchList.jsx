@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SearchList = () => {
+const SearchList = ({setSearch}) => {
   return (
     <div>SearchList</div>
   )

@@ -2,11 +2,11 @@ import React from 'react'
 import ActivityCard from './ActivityCard'
 import Grid from '@mui/material/Grid';
 import { Search } from '@mui/icons-material';
+import SearchList from './SearchList';
 
 
 
-
-const ActivitiesList = ({activityList, setPlannedTasks, plannedTasks}) => {
+const ActivitiesList = ({ setPlannedTasks, plannedTasks, display, setSearch}) => {
   const baseUrl = `http://localhost:3001/activities/`
   
 
@@ -30,13 +30,13 @@ const ActivitiesList = ({activityList, setPlannedTasks, plannedTasks}) => {
       // }
     
 
-    const activityObj = activityList.map((task)=> {
+    const activityObj = display.map((task)=> {
       return <ActivityCard key={task.id} task={task} />
     })
     return (
       <div>
         <h1>All Activities</h1>
-        <Search />
+        <SearchList onSearch={setSearch} />
         <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
   <Grid item xs={6}>
     {activityObj}

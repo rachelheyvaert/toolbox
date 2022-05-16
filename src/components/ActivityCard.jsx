@@ -5,10 +5,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { color } from '@mui/system';
 
 const ActivityCard = ({task}) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, margin : '50px'}}>
       <CardMedia
         component="img"
         height="140"
@@ -17,7 +18,7 @@ const ActivityCard = ({task}) => {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          <h4> {task.name} </h4>
+         {task.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {task.description}

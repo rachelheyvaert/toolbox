@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Routes, Route} from "react-router-dom";
 import NavBar from "./components/navigation/NavBar";
 import Home from "./components/static/Home";
-import AddActivity from "./components/AddActivity"
+import NewActivityForm from "./components/NewActivityForm"
 import ActivitiesList from "./components/ActivitiesList";
 import PlannedActivities from "./components/PlannedActivities";
 
@@ -37,7 +37,7 @@ return (
        displayedActivities={displayActivities} 
         setSearch={setSearch}
         search={search}/>}  />
-    <Route path="/activities/add" element={<AddActivity />} />
+    <Route path="/activities/new" element={<NewActivityForm />} />
     <Route path="/activities/planned" element={<PlannedActivities />} />
   </Routes>
  

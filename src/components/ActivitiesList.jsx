@@ -15,7 +15,7 @@ const ActivitiesList = ({ displayedActivities, setDisplay, search, setSearch}) =
     })
     return (
       <div>
-        <h1>All Activities</h1>
+        <h1>Activities in your ToolBox</h1>
         <SearchBar onSearch={setSearch} search={search} />
         {activityObj}
      </div>

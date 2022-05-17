@@ -36,10 +36,8 @@ const ActivityCard = ({task, onDelete}) => {
       <CardActions>
         <Button onClick={handleDeleteClick} size="small">Delete</Button>
         <div>
-        {!isPlanned ? (
- <Button size="small">Add to Planner</Button>) 
- : (<Button size="small">Planned</Button>)}
-
+        {isPlanned ?  (<Button size="small"  onClick={() => setIsPlanned(false)}>Ready</Button>) 
+       : (<Button size="small"  onClick={() => setIsPlanned(true)}>Addd to Plan</Button>)}
         </div>
         
        

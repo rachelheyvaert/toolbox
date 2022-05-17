@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from "react"
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import { color } from '@mui/system';
 
 const ActivityCard = ({task, onDelete}) => {
-
+  const [isPlanned, setIsPlanned] = useState(false);
   function handleDeleteClick() {
     fetch(`http://localhost:3001/activities/${task.id}`, {
       method: "DELETE",
@@ -34,7 +35,14 @@ const ActivityCard = ({task, onDelete}) => {
       </CardContent>
       <CardActions>
         <Button onClick={handleDeleteClick} size="small">Delete</Button>
-        <Button  size="small">Add to Planner</Button>
+        <div>
+        {!isPlanned ? (
+ <Button size="small">Add to Planner</Button>) 
+ : (<Button size="small">Planned</Button>)}
+
+        </div>
+        
+       
       </CardActions>
     </Card>
   );

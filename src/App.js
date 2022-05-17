@@ -11,8 +11,8 @@ const baseUrl = `http://localhost:3001/activities`
 
 const App = () => {
   const [activityList, setActivityList] = useState([])
-  const [plannedTasks, setPlannedTasks] = useState([])
-  const [search, setSearch] = useState("")
+  // const [plannedTasks, setPlannedTasks] = useState([])
+  const [search, setSearch] = useState("");
 
   useEffect(()=> {
     fetch(baseUrl)
@@ -20,10 +20,13 @@ const App = () => {
     .then((data)=>setActivityList(data))
     }, [])
 
+const displayActivities = activityList.filter((activity)=>{ 
+  if(search !== ""){
+     return activity.name.toLowerCase().includes(search.toLowerCase())
+  } return (activityList)
+});
+  
 
-    const displayedActivity = activityList.filter((activity) =>
-    activity.name.toLowerCase().includes(search.toLowerCase())
-  );
 return (
   <div>
   <NavBar />
@@ -31,14 +34,11 @@ return (
     <Route path="/" element= {<Home/>} />
     <Route path="/activitieslist"
      element={<ActivitiesList 
-     display={displayedActivity}
-      plannedTasks={plannedTasks}
-       activityList={activityList}
-        setPlannedTasks={setPlannedTasks} 
+       displayedActivities={displayActivities} 
         setSearch={setSearch}
-        search={search}/>}/>
+        search={search}/>}  />
     <Route path="/activities/add" element={<AddActivity />} />
-    <Route path="/activities/planned" element={<PlannedActivities plannedTasks={plannedTasks}/>} />
+    <Route path="/activities/planned" element={<PlannedActivities />} />
   </Routes>
  
   </div>

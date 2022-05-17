@@ -3,22 +3,23 @@ import { TextField } from '@mui/material'
 import { display } from '@mui/system'
 import Button from '@mui/material/Button';
 
-const SearchBar = ({setSearch, search}) => {
+const SearchBar = ({onSearch, search}) => {
+;
 
-  function handleChange(e) {
-console.log(e.target.value) 
-
+  function handleSubmit(e) {
+    e.preventDefault();
+  onSearch(search)
  }
+
   return (
-    <div style={{ padding: "20px"}}>
+    <form  onSubmit={handleSubmit} style={{ padding: "20px"}}>
        <TextField
     id="filled-hidden-label-small"
     label="Search for an activity..."
     value={search}
-    onChange={handleChange}
+    onChange={(e)=> onSearch(e.target.value)}
   />
- <Button size="large" variant="contained">Search</Button>
-    </div>
+    </form>
    
   )
 }

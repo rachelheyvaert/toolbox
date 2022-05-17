@@ -29,7 +29,14 @@ return (
   <NavBar />
   <Routes>
     <Route path="/" element= {<Home/>} />
-    <Route path="/activitieslist" element={<ActivitiesList display={displayedActivity} plannedTasks={plannedTasks} activityList={activityList} setPlannedTasks={setPlannedTasks} setSearch={setSearch}/>}/>
+    <Route path="/activitieslist"
+     element={<ActivitiesList 
+     display={displayedActivity}
+      plannedTasks={plannedTasks}
+       activityList={activityList}
+        setPlannedTasks={setPlannedTasks} 
+        setSearch={setSearch}
+        search={search}/>}/>
     <Route path="/activities/add" element={<AddActivity />} />
     <Route path="/activities/planned" element={<PlannedActivities plannedTasks={plannedTasks}/>} />
   </Routes>

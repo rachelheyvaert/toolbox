@@ -5,7 +5,6 @@ import Home from "./components/static/Home";
 import AddActivity from "./components/AddActivity"
 import ActivitiesList from "./components/ActivitiesList";
 import PlannedActivities from "./components/PlannedActivities";
-import { LocalActivity } from "@mui/icons-material";
 
 const baseUrl = `http://localhost:3001/activities`
 
@@ -34,6 +33,7 @@ return (
     <Route path="/" element= {<Home/>} />
     <Route path="/activitieslist"
      element={<ActivitiesList 
+      setDisplay={setActivityList}
        displayedActivities={displayActivities} 
         setSearch={setSearch}
         search={search}/>}  />

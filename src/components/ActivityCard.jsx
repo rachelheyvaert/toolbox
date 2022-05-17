@@ -7,12 +7,14 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { color } from '@mui/system';
 
-const ActivityCard = ({task}) => {
+const ActivityCard = ({task, onDelete}) => {
 
-// function handleClick(e){
-//     console.log("target", e.target.value.parentElement)
-//     handleAddToPlanner(e.target.value)
-// }
+  function handleDeleteClick() {
+    fetch(`http://localhost:3001/activities/${task.id}`, {
+      method: "DELETE",
+    });
+    onDelete(task)
+  } ///deletes when refreshed only
 
   return (
     <Card id={task.id} sx={{ maxWidth: 345, margin : '50px'}}>
@@ -31,7 +33,7 @@ const ActivityCard = ({task}) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Delete</Button>
+        <Button onClick={handleDeleteClick} size="small">Delete</Button>
         <Button  size="small">Add to Planner</Button>
       </CardActions>
     </Card>

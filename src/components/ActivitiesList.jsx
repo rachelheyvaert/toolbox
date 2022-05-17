@@ -3,11 +3,15 @@ import ActivityCard from './ActivityCard'
 import SearchBar from './SearchBar';
 
 
-const ActivitiesList = ({ displayedActivities, search, setSearch}) => {
+const ActivitiesList = ({ displayedActivities, setDisplay, search, setSearch}) => {
   
+  function handleRemoveActivity(id) {
+    const updatedActvities = displayedActivities.filter((activity) => activity.id !== id);
+    setDisplay(updatedActvities);
+  }
   
  const activityObj = displayedActivities.map((task)=> {
-      return <ActivityCard key={task.id} task={task} />
+      return <ActivityCard key={task.id} task={task} onDelete={handleRemoveActivity} />
     })
     return (
       <div>

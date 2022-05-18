@@ -24,7 +24,10 @@ const displayActivities = activityList.filter((activity)=>{
      return activity.name.toLowerCase().includes(search.toLowerCase())
   } return (activityList)
 });
-  
+function handleAddActivity(newTask){
+  const updatedActvities = [...ActivitiesList, newTask];
+  setActivityList(updatedActvities)
+  }
 
 return (
   <div>
@@ -37,7 +40,7 @@ return (
        displayedActivities={displayActivities} 
         setSearch={setSearch}
         search={search}/>}  />
-    <Route path="/activities/new" element={<NewActivityForm />} />
+    <Route path="/activities/new" element={<NewActivityForm onAddActivity={handleAddActivity}/>} />
     <Route path="/activities/planned" element={<PlannedActivities />} />
   </Routes>
  

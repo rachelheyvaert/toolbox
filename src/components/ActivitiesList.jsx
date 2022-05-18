@@ -9,7 +9,7 @@ const ActivitiesList = ({ displayedActivities, setDisplay, search, setSearch}) =
     const updatedActvities = displayedActivities.filter((activity) => activity.id !== id);
     setDisplay(updatedActvities);
   }
-  
+
  const activityObj = displayedActivities.map((task)=> {
       return <ActivityCard key={task.id} task={task} onDelete={handleRemoveActivity} />
     })

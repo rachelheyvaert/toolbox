@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from "react"
 import Box from '@mui/material/Box';
 import FilledInput from '@mui/material/FilledInput';
 import FormControl from '@mui/material/FormControl';
@@ -7,15 +8,34 @@ import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 
-const NewActivityForm =() =>{
-  const [name, setName] = React.useState('');
+const NewActivityForm =({onAddActivity}) =>{
+  const [name, setName] = useState('');
+  const [image, setImage] = useState('')
+  const [description, setDescription] = useState('')
+  const [area, setArea] = useState('')
 
-  const handleChange = (event) => {
-    setName(event.target.value);
-  };
+  function handleSubmit(e){
+    e.preventDefault()
+    fetch(`http://localhost:3001/activities`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        area: area,
+        image: image,
+        description: description,
+        isPlanned: false
+      }),
+    })
+      .then((r) => r.json())
+      .then((newAct) => onAddActivity(newAct));
+  }
+
 
   return (
-    <Box
+    <Box onSubmit={handleSubmit}
       component="form"
       sx={{
         '& > :not(style)': { m: 14 },
@@ -24,45 +44,51 @@ const NewActivityForm =() =>{
       autoComplete="off"
     >
       <FormControl variant="standard">
-        <InputLabel htmlFor="component-helper">Name of Activity</InputLabel>
+      <InputLabel htmlFor="component-helper"> Title of Activity..</InputLabel>
         <Input
           id="component-helper"
           value={name}
-          onChange={handleChange}
+          onChange={(e) => setName(e.target.value)}
+          aria-describedby="component-helper-text"
+        />
+        </FormControl>
+        <FormControl >
+        <InputLabel htmlFor="component-helper">Target Area</InputLabel>
+        <Input
+          id="component-helper"
+          value={area}
+          onChange={(e) => setArea(e.target.value)}
           aria-describedby="component-helper-text"
         />
         <FormHelperText id="component-helper-text">
-          Name of Activity..
+          Langauge, Articulation, Pagmatics, Fluency, etc.
         </FormHelperText>
-      </FormControl>
-      <FormControl disabled variant="standard">
-        <InputLabel htmlFor="component-disabled">Name</InputLabel>
-        <Input id="component-disabled" value={name} onChange={handleChange} />
-        <FormHelperText>Disabled</FormHelperText>
-      </FormControl>
-      <FormControl error variant="standard">
-        <InputLabel htmlFor="component-error">Name</InputLabel>
+        </FormControl>
+        <FormControl >
+        <InputLabel htmlFor="component-helper">Description</InputLabel>
         <Input
-          id="component-error"
-          value={name}
-          onChange={handleChange}
-          aria-describedby="component-error-text"
+          id="component-helper"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          aria-describedby="component-helper-text"
         />
-        <FormHelperText id="component-error-text">Error</FormHelperText>
-      </FormControl>
-      <FormControl>
-        <InputLabel htmlFor="component-outlined">test</InputLabel>
+        <FormHelperText id="component-helper-text">
+          What is the purpose of the activity?
+        </FormHelperText>
+        </FormControl>
+        <FormControl >
+        <InputLabel htmlFor="component-outlined">Picture</InputLabel>
         <OutlinedInput
           id="component-outlined"
-          value={name}
-          onChange={handleChange}
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
           label="Name"
         />
+         <FormHelperText id="component-helper-text">
+          Link an image 
+        </FormHelperText>
       </FormControl>
-      <FormControl variant="filled">
-        <InputLabel htmlFor="component-filled">Name</InputLabel>
-        <FilledInput id="component-filled" value={name} onChange={handleChange} />
-      </FormControl>
+<button type="submit">ADD</button>
     </Box>
   );
 }

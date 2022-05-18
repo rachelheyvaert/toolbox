@@ -7,6 +7,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { color } from '@mui/system';
+import DeleteIcon from '@mui/icons-material/Delete';
+import AddTaskIcon from '@mui/icons-material/AddTask';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const ActivityCard = ({task, onDelete}) => {
   const [isPlanned, setIsPlanned] = useState(false);
@@ -33,11 +36,11 @@ const ActivityCard = ({task, onDelete}) => {
           {task.description}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button onClick={handleDeleteClick} size="small">Delete</Button>
+      <CardActions >
+        <Button onClick={handleDeleteClick} size="small"><DeleteIcon></DeleteIcon></Button>
         <div>
-        {isPlanned ?  (<Button size="small"  onClick={() => setIsPlanned(false)}>Ready</Button>) 
-       : (<Button size="small"  onClick={() => setIsPlanned(true)}>Addd to Plan</Button>)}
+        {isPlanned ?  (<Button style={{color:"green"}} size="small"  onClick={() => setIsPlanned(false)}><CheckCircleIcon></CheckCircleIcon>Ready</Button>) 
+       : (<Button style={{paddingLeft:"100px"}}size="small"  onClick={() => setIsPlanned(true)}><AddTaskIcon></AddTaskIcon> Add to Plan</Button>)}
         </div>
         
        

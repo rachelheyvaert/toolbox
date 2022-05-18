@@ -1,12 +1,13 @@
 import * as React from 'react';
 import {useState} from "react"
 import Box from '@mui/material/Box';
-import FilledInput from '@mui/material/FilledInput';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 
 const NewActivityForm =({onAddActivity}) =>{
   const [name, setName] = useState('');
@@ -36,14 +37,15 @@ const NewActivityForm =({onAddActivity}) =>{
 
   return (
     <div>
-    <h1 style={{textAlign: "center"}}>Create a new tool</h1>
+    <h1 style={{textAlign: "center"}}>Create a New Tool</h1>
     <Box onSubmit={handleSubmit}
       component="form"
       sx={{
-        '& > :not(style)': { m: 14 },
+        '& > :not(style)': { m: 8},
       }}
       noValidate
       autoComplete="off"
+      style={{textAlign: "center"}}
     >
       <FormControl variant="standard">
       <InputLabel htmlFor="component-helper"> Title of Activity..</InputLabel>
@@ -90,7 +92,7 @@ const NewActivityForm =({onAddActivity}) =>{
           Link an image 
         </FormHelperText>
       </FormControl>
-<button type="submit">ADD</button>
+      <Button type="submit" variant="contained">Add Activity</Button>
     </Box>
     </div>
   );

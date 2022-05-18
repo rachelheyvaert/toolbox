@@ -6,6 +6,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom"
+import HomeIcon from '@mui/icons-material/Home';
+import HandymanIcon from '@mui/icons-material/Handyman';
 
 const NavBar = () => {
   return (
@@ -13,10 +15,10 @@ const NavBar = () => {
       <AppBar position="static">
       <Container>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Toolbox
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
+            Tool<HandymanIcon></HandymanIcon>Box
           </Typography>
-          <Button color="inherit" component={Link}  to="/">Home</Button>
+          <Button color="inherit" component={Link}  to="/"><HomeIcon></HomeIcon></Button>
           <Button color="inherit" component={Link}  to="/activitieslist">Activities List</Button>
           <Button color="inherit" component={Link} to="/activities/planned">Planner</Button>
           <Button color="inherit" component={Link} to="/activities/new">Add</Button>

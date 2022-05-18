@@ -35,6 +35,8 @@ const NewActivityForm =({onAddActivity}) =>{
 
 
   return (
+    <div>
+    <h1 style={{textAlign: "center"}}>Create a new tool</h1>
     <Box onSubmit={handleSubmit}
       component="form"
       sx={{
@@ -90,6 +92,7 @@ const NewActivityForm =({onAddActivity}) =>{
       </FormControl>
 <button type="submit">ADD</button>
     </Box>
+    </div>
   );
 }
 export default NewActivityForm;

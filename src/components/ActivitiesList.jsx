@@ -16,8 +16,8 @@ const ActivitiesList = ({ displayedActivities, setDisplay, search, setSearch}) =
     })
     return (
       <div>
-        <h1>Activities in your ToolBox</h1>
-        <SearchBar onSearch={setSearch} search={search} />
+        <h1 style={{textAlign: "center"}}>Activities in your Tool Box</h1>
+        <SearchBar  onSearch={setSearch} search={search} />
         <Grid container spacing={2}>
         {activityObj}
         </Grid>

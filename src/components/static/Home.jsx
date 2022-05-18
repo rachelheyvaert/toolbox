@@ -4,7 +4,7 @@ const Home = () => {
   
   return (
     <div>
-      <h1>Welcome to Toolbox</h1>
+      <h1 style={{textAlign: "center"}}>Welcome to Toolbox</h1>
       <h3>TBD
       </h3>
       </div>

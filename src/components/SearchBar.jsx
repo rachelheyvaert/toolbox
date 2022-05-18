@@ -7,7 +7,7 @@ const SearchBar = ({onSearch, search}) => {
 
 
   return (
-    <form   style={{ padding: "20px"}}>
+    <form   style={{textAlign: "center"}}>
        <TextField
     id="filled-hidden-label-small"
     label="Search for an activity..."

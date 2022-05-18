@@ -1,6 +1,7 @@
 import React  from  'react'
 import ActivityCard from './ActivityCard'
 import SearchBar from './SearchBar';
+import Grid from '@mui/material/Grid';
 
 
 const ActivitiesList = ({ displayedActivities, setDisplay, search, setSearch}) => {
@@ -17,7 +18,9 @@ const ActivitiesList = ({ displayedActivities, setDisplay, search, setSearch}) =
       <div>
         <h1>Activities in your ToolBox</h1>
         <SearchBar onSearch={setSearch} search={search} />
+        <Grid container spacing={2}>
         {activityObj}
+        </Grid>
      </div>
   )}
 

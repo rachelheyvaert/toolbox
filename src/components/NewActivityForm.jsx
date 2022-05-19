@@ -7,13 +7,16 @@ import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Button from '@mui/material/Button';
+import { Navigate } from "react-router-dom"
 
 
 const NewActivityForm =({onAddActivity}) =>{
+  //make an object with keys for state
   const [name, setName] = useState('');
   const [image, setImage] = useState('')
   const [description, setDescription] = useState('')
   const [area, setArea] = useState('')
+
 
   function handleSubmit(e){
     e.preventDefault()
@@ -32,8 +35,13 @@ const NewActivityForm =({onAddActivity}) =>{
     })
       .then((r) => r.json())
       .then((newAct) => onAddActivity(newAct));
+      <Navigate to="/activities/new" replace={true} />
+      setArea('');
+      setImage('');
+      setName('');
+      setImage('');
+      setDescription('')
   }
-
 
   return (
     <div>

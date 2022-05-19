@@ -1,16 +1,15 @@
 import React, {useState, useEffect} from "react";
 import { Routes, Route} from "react-router-dom";
-import NavBar from "./components/navigation/NavBar";
-import Home from "./components/static/Home";
-import NewActivityForm from "./components/NewActivityForm"
-import ActivitiesList from "./components/ActivitiesList";
-import PlannedActivities from "./components/PlannedActivities";
+import Home from "./static/Home";
+import NewActivityForm from "./NewActivityForm"
+import ActivitiesList from "./ActivitiesList";
+import PlannedActivities from "./PlannedActivities";
 const baseUrl = `http://localhost:3001/activities`
 
 const PageContainer = () => {
 const [activityList, setActivityList] = useState([])
 const [isPlanned, setIsPlanned] = useState(false);
-const [search, setSearch] = useState("");
+const [search, setSearch] = useState("")
 
 useEffect(()=> {
   fetch(baseUrl)
@@ -24,15 +23,15 @@ if(search !== ""){
 } return (activityList)
 });
 function handleAddActivity(newTask){
-const updatedActvities = [...ActivitiesList, newTask];
-setActivityList(updatedActvities)
+    const updatedActvities = [...activityList, newTask];
+    console.log(updatedActvities)
+    setActivityList(updatedActvities)
 }
 
 return (
 <div>
-<NavBar />
 <Routes>
-  <Route path="/" element= {<Home/>} />
+  <Route path="/" element= {<Home />} />
   <Route path="/activitieslist"
    element={<ActivitiesList 
     setDisplay={setActivityList}

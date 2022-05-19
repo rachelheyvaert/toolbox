@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 
 const ActivitiesList = ({ displayedActivities, setDisplay, search, setSearch}) => {
   
+  
   function handleRemoveActivity(id) {
     const updatedActvities = displayedActivities.filter((activity) => activity.id !== id);
     setDisplay(updatedActvities);

@@ -10,7 +10,7 @@ const baseUrl = `http://localhost:3001/activities`
 
 const App = () => {
   const [activityList, setActivityList] = useState([])
-  // const [plannedTasks, setPlannedTasks] = useState([])
+  const [isPlanned, setIsPlanned] = useState(false);
   const [search, setSearch] = useState("");
 
   useEffect(()=> {
@@ -39,9 +39,13 @@ return (
       setDisplay={setActivityList}
        displayedActivities={displayActivities} 
         setSearch={setSearch}
-        search={search}/>}  />
+        search={search}
+        setIsPlanned={setIsPlanned}
+        isPlanned={isPlanned}/> }
+        />
     <Route path="/activities/new" element={<NewActivityForm onAddActivity={handleAddActivity}/>} />
-    <Route path="/activities/planned" element={<PlannedActivities />} />
+    <Route path="/activities/planned" element={<PlannedActivities isPlanned={isPlanned} 
+        setIsPlanned={setIsPlanned}/>} />
   </Routes>
  
   </div>

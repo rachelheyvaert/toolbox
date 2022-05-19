@@ -1,70 +1,33 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Welcome to Tool Box
+Tool Box is a React single page web application with client-side routing and a RESTful API backend via a JSON-server. The user is able to create, store, and choose activities to save to a planner. The activities can be changed to suit the users needs. The default activities are related to areas of communication targeted by pediatric Speech-Language Pathologists.
+ 
+## Installation
+ 
+Fork and clone the repository into your desired directory. Open the repo and run "npm install && npm start". The database of stocks can be found in a JSON-server, so after you start your React server, make sure to start your JSON-server on http://localhost:3001/acttivities.
+ 
+To install: npm install -g json-server
+To start: json-server --watch db.json --port 3001
+ 
+## Usage
+When the React server starts, the user will see the Home Page with a navigation bar atop the page.
+//INSTER PICTURE
+When the user clicks on the Activities list, all the activities stored/created will be shown. A search bar is provided to allow the user to search for a specific task or exercise. Only activities matching in name will be shown.
+GIF
+The user may click "Add" to save the activity to the Planner section. If the selection was by mistake, selecting the same button will remove it from the plan.
+ 
+Navigating to the Planner section will display all the activities that have been selected. If the task has been completed or is no longer desired clicking the activity will  remove it from the page.
+Gif
+ 
+If the user wishes to delete an activity, you may do so by clicking the trash can icon on the specific activity card.
+gif
+ 
+ 
+## Looking Ahead
+In the future there will be a filter to sort both alphabetically and by target area next to the search bar.
+ 
+## Support
+For questions, comments or concerns, email rachelheyvaert@gmail.com
+ 
+## Acknowledgement
+UI and styling was implemented from MUI
+https://mui.com/

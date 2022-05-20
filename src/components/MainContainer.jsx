@@ -8,7 +8,7 @@ const baseUrl = `http://localhost:3001/activities`
 
 const PageContainer = () => {
 const [activityList, setActivityList] = useState([])
-const [plans, setPlan] = useState([]);
+const [plans, setPlans] = useState([]);
 const [search, setSearch] = useState("")
 
 useEffect(()=> {
@@ -31,8 +31,7 @@ function handleAddToPlanner(taskToAdd){
     const taskInPlans = plans.find(
         (task)=> task.id === taskToAdd.id);
         if(!taskInPlans) {
-            setPlan([...plans, taskToAdd])
-            console.log(plans)
+            setPlans([...plans, taskToAdd])
         }
     }
 
@@ -46,9 +45,9 @@ return (
      displayedActivities={displayActivities} 
       setSearch={setSearch}
       search={search}/>} 
-      onAddToPlans={handleAddToPlanner}/>
-    <Route path="/activities/new" element={<NewActivityForm onAddActivity={handleAddNewActivity}/>} />
-    <Route path="/activities/planned" element={<PlannedActivities activities={plans}/>} />
+      />
+    <Route path="/activities/new" element={<NewActivityForm onAddActivity={handleAddNewActivity} onAddToPlans={handleAddToPlanner}/>} />
+    <Route path="/activities/planned" element={<PlannedActivities activities={plans} />} />
 </Routes>
 </div>
 

@@ -10,11 +10,11 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-const ActivityCard = ({task, onDelete, onAddToPlans}) => {
+const ActivityCard = ({task, onDelete, onAddToPlansClick}) => {
   const [isPlanned, setIsPlanned] = useState(false);
   function handleClick(){
-onAddToPlans(task)
-setIsPlanned(false)
+setIsPlanned(true);
+onAddToPlansClick(task.id);
   }
   
   function handleDeleteClick() {

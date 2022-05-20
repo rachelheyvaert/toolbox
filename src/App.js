@@ -1,13 +1,13 @@
 import React from "react";
 import NavBar from "./components/navigation/NavBar";
-import PageContainer from "./components/PageContainer";
+import MainContainer from "./components/MainContainer";
 
 
 const App = () => {
   return (
 <div>
   <NavBar />
-  <PageContainer /> 
+  <MainContainer /> 
 </div>
   );
 }

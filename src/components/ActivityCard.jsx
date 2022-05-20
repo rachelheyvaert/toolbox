@@ -6,19 +6,23 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { color } from '@mui/system';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-const ActivityCard = ({task, onDelete}) => {
+const ActivityCard = ({task, onDelete, onAddToPlans}) => {
   const [isPlanned, setIsPlanned] = useState(false);
+  function handleClick(){
+onAddToPlans(task)
+setIsPlanned(false)
+  }
+  
   function handleDeleteClick() {
     fetch(`http://localhost:3001/activities/${task.id}`, {
       method: "DELETE",
-    });
+    })
     onDelete(task)
-  } ///deletes when refreshed only
+  } ///deletes when refreshed only, want to update state? State is included in function...
 
   return (
     <Card id={task.id} sx={{ maxWidth: 345, margin : '50px'}}>
@@ -39,11 +43,9 @@ const ActivityCard = ({task, onDelete}) => {
       <CardActions >
         <Button onClick={handleDeleteClick} size="small"><DeleteIcon></DeleteIcon></Button>
         <div>
-        {isPlanned ?  (<Button style={{color:"green"}} size="small"  onClick={() => setIsPlanned(false)}><CheckCircleIcon></CheckCircleIcon>Ready</Button>) 
+        {isPlanned ?  (<Button style={{color:"green"}} size="small"  onClick={handleClick}><CheckCircleIcon></CheckCircleIcon>Ready</Button>) 
        : (<Button style={{paddingLeft:"100px"}}size="small"  onClick={() => setIsPlanned(true)}><AddTaskIcon></AddTaskIcon> Add to Plan</Button>)}
-        </div>
-        
-       
+        </div>       
       </CardActions>
     </Card>
   );

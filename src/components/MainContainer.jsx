@@ -4,6 +4,7 @@ import Home from "./static/Home";
 import NewActivityForm from "./NewActivityForm"
 import ActivitiesContainer from "./ActivitiesContainer";
 import PlannedContainer from "./PlannedContainer";
+
 const baseUrl = `http://localhost:3001/activities`
 
 const PageContainer = () => {

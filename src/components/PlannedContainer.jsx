@@ -8,7 +8,8 @@ const PlannedContainer = ({activities}) => {
    return <ActivityCard key={task.id} task={task} />
   })
   return (
-    <div>Planned Activities
+    <div>
+      <h1 style={{textAlign: "center"}}>Your Planned Activities</h1>
      {plannedList}
     </div>
   )

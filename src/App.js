@@ -5,7 +5,7 @@ import MainContainer from "./components/MainContainer";
 
 const App = () => {
   return (
-<div>
+<div style={{backgroundImage: "http://localhost:3000/image.png"}}>
   <NavBar />
   <MainContainer /> 
 </div>

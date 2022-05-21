@@ -7,24 +7,26 @@ import PlannedContainer from "./PlannedContainer";
 const baseUrl = `http://localhost:3001/activities`
 
 const PageContainer = () => {
-const [activityList, setActivityList] = useState([])
+const [activities, setActivities] = useState([])
 const [plans, setPlans] = useState([]);
 const [search, setSearch] = useState("")
 
 useEffect(()=> {
   fetch(baseUrl)
   .then((r)=>r.json())
-  .then((data)=>setActivityList(data))
+  .then((data)=>setActivities(data))
   }, [])
 
-const displayActivities = activityList.filter((activity)=>{ 
+const displayActivities = activities.filter((activity)=>{ 
 if(search !== ""){
    return activity.name.toLowerCase().includes(search.toLowerCase())
-} return (activityList)
+} return (activities)
 });
+
+
 function handleAddNewActivity(newTask){
-    const updatedActvities = [...activityList, newTask];
-    setActivityList(updatedActvities)
+    const updatedActvities = [...activities, newTask];
+    setActivities(updatedActvities)
 }
 
 function handleAddToPlanner(taskToAdd){
@@ -39,9 +41,9 @@ return (
 <div>
 <Routes>
   <Route path="/" element= {<Home />} />
-  <Route path="/activitieslist"
+  <Route path="/activities"
    element={<ActivitiesContainer 
-    setDisplay={setActivityList}
+    setDisplay={setActivities}
      displayedActivities={displayActivities} 
       setSearch={setSearch}
       search={search}/>} 

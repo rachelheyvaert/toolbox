@@ -19,8 +19,8 @@ const NavBar = () => {
             Tool<HandymanIcon></HandymanIcon>Box
           </Typography>
           <Button color="inherit" component={Link}  to="/"><HomeIcon></HomeIcon></Button>
-          <Button color="inherit" component={Link}  to="/activitieslist">Activities List</Button>
-          <Button color="inherit" component={Link} to="/activities/planned">Planner</Button>
+          <Button color="inherit" component={Link}  to="/activities">Activities</Button>
+          <Button color="inherit" component={Link} to="/activities/planned">Plan</Button>
           <Button color="inherit" component={Link} to="/activities/new">Add</Button>
         </Toolbar>
         </Container>

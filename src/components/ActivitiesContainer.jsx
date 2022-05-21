@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 
 
 
-const ActivitiesList = ({ displayedActivities, setDisplay, search, setSearch, onAddToPlans}) => {
+const ActivitiesContainer = ({ displayedActivities, setDisplay, search, setSearch, onAddToPlans}) => {
   
   function handleDeleteActivity(id) {
     const updatedActvities = displayedActivities.filter((activity) => activity.id !== id);
@@ -26,4 +26,4 @@ const ActivitiesList = ({ displayedActivities, setDisplay, search, setSearch, on
      </div>
   )}
 
-export default ActivitiesList;
+export default ActivitiesContainer;

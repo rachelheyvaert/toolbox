@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import { Routes, Route} from "react-router-dom";
 import Home from "./static/Home";
 import NewActivityForm from "./NewActivityForm"
-import ActivitiesList from "./ActivitiesList";
-import PlannedActivities from "./PlannedActivities";
+import ActivitiesContainer from "./ActivitiesContainer";
+import PlannedContainer from "./PlannedContainer";
 const baseUrl = `http://localhost:3001/activities`
 
 const PageContainer = () => {
@@ -40,14 +40,14 @@ return (
 <Routes>
   <Route path="/" element= {<Home />} />
   <Route path="/activitieslist"
-   element={<ActivitiesList 
+   element={<ActivitiesContainer 
     setDisplay={setActivityList}
      displayedActivities={displayActivities} 
       setSearch={setSearch}
       search={search}/>} 
       />
     <Route path="/activities/new" element={<NewActivityForm onAddActivity={handleAddNewActivity} onAddToPlans={handleAddToPlanner}/>} />
-    <Route path="/activities/planned" element={<PlannedActivities activities={plans} />} />
+    <Route path="/activities/planned" element={<PlannedContainer activities={plans} />} />
 </Routes>
 </div>
 

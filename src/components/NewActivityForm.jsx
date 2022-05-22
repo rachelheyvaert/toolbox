@@ -50,10 +50,11 @@ const NewActivityForm =({onAddActivity}) =>{
       component="form"
       sx={{
         '& > :not(style)': { m: 8},
+        
       }}
       noValidate
       autoComplete="off"
-      style={{textAlign: "center"}}
+      style={{textAlign: "center", backgroundColor:"#cba477", marginLeft:"10%", marginRight: "10%"}}
     >
       <FormControl variant="standard">
       <InputLabel htmlFor="component-helper"> Title of Activity..</InputLabel>

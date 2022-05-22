@@ -52,8 +52,8 @@ setPlans(updatedPlans)
       <CardActions >
         <Button onClick={() => handleDeleteClick(task)} size="small"><DeleteIcon></DeleteIcon></Button>
         <div>
-     <Button style={{color:"green"}} size="small"  onClick={()=> handleClick()}><CheckCircleIcon></CheckCircleIcon>Button</Button>
-     <Button style={{color:"green"}} size="small"  onClick={()=> handleRemoveFromPlans()}>Rmove From plans</Button>
+     <Button style={{color:"inherit"}} size="small"  onClick={()=> handleClick()}><CheckCircleIcon></CheckCircleIcon>Save to Plan</Button>
+     <Button style={{color:"inherit"}} size="small"  onClick={()=> handleRemoveFromPlans()}>Unsave</Button>
         </div>       
       </CardActions>
     </Card>

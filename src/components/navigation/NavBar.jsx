@@ -12,13 +12,13 @@ import HandymanIcon from '@mui/icons-material/Handyman';
 const NavBar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-      <Container>
+      <AppBar style={{backgroundColor:"#8BC6FC"}} position="static">
+      <Container >
         <Toolbar>
           <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
             Tool<HandymanIcon></HandymanIcon>Box
           </Typography>
-          <Button color="inherit" component={Link}  to="/"><HomeIcon></HomeIcon></Button>
+          <Button style={{color:"#99746B"}} component={Link}  to="/"><HomeIcon></HomeIcon></Button>
           <Button color="inherit" component={Link}  to="/activities">Activities</Button>
           <Button color="inherit" component={Link} to="/activities/planned">Plan</Button>
           <Button color="inherit" component={Link} to="/activities/new">Add</Button>

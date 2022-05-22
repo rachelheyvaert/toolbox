@@ -10,19 +10,28 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
-const ActivityCard = ({task, onDelete, onAddToPlansClick}) => {
+
+const ActivityCard = ({task, onAddToPlansClick, setPlans, plans, handleDeleteClick}) => {
   const [isPlanned, setIsPlanned] = useState(false);
+  
   function handleClick(){
-setIsPlanned(true);
+// setIsPlanned(true);
 onAddToPlansClick(task.id);
   }
-  
-  function handleDeleteClick() {
+  function handleRemoveFromPlans(){
     fetch(`http://localhost:3001/activities/${task.id}`, {
-      method: "DELETE",
-    })
-    onDelete(task)
-  } ///deletes when refreshed only, want to update state? State is included in function...
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            ...task,
+          isPlanned: false }),
+        })
+      const updatedPlans = plans.filter((plannedTask)=> plannedTask !== task)
+setPlans(updatedPlans)
+  }
+   ///deletes when refreshed only, want to update state? State is included in function...
 
   return (
     <Card id={task.id} sx={{ maxWidth: 345, margin : '50px'}}>
@@ -41,10 +50,10 @@ onAddToPlansClick(task.id);
         </Typography>
       </CardContent>
       <CardActions >
-        <Button onClick={handleDeleteClick} size="small"><DeleteIcon></DeleteIcon></Button>
+        <Button onClick={() => handleDeleteClick(task)} size="small"><DeleteIcon></DeleteIcon></Button>
         <div>
-        {isPlanned ?  (<Button style={{color:"green"}} size="small"  onClick={handleClick}><CheckCircleIcon></CheckCircleIcon>Ready</Button>) 
-       : (<Button style={{paddingLeft:"100px"}}size="small"  onClick={() => setIsPlanned(true)}><AddTaskIcon></AddTaskIcon> Add to Plan</Button>)}
+     <Button style={{color:"green"}} size="small"  onClick={()=> handleClick()}><CheckCircleIcon></CheckCircleIcon>Button</Button>
+     <Button style={{color:"green"}} size="small"  onClick={()=> handleRemoveFromPlans()}>Rmove From plans</Button>
         </div>       
       </CardActions>
     </Card>

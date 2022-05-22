@@ -5,14 +5,14 @@ import Grid from '@mui/material/Grid';
 
 
 
-const ActivitiesContainer = ({ displayedActivities, setDisplay, search, setSearch, onAddToPlans}) => {
+const ActivitiesContainer = ({ displayedActivities, setDisplay, search, plans, setSearch, handleDeleteClick, onAddToPlans, setPlans}) => {
   
   function handleDeleteActivity(id) {
     const updatedActvities = displayedActivities.filter((activity) => activity.id !== id);
     setDisplay(updatedActvities);
   }
   const activityObj = displayedActivities.map((task)=> {
-    return <ActivityCard key={task.id} task={task} onDelete={handleDeleteActivity} onAddToPlansClick={onAddToPlans} />
+    return <ActivityCard handleDeleteClick={handleDeleteClick} setPlans={setPlans} key={task.id} task={task} plans={plans} onAddToPlansClick={onAddToPlans} />
   })
  
     return (

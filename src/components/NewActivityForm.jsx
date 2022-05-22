@@ -11,36 +11,40 @@ import { Navigate } from "react-router-dom"
 
 
 const NewActivityForm =({onAddActivity}) =>{
-  //make an object with keys for state
-  const [name, setName] = useState('');
-  const [image, setImage] = useState('')
-  const [description, setDescription] = useState('')
-  const [area, setArea] = useState('')
-
+const [formData, setFormData] = useState({
+name: "",
+image: "",
+description: "",
+area: "",
+isPlanned: false,
+})
 
   function handleSubmit(e){
     e.preventDefault()
+    const formData = {
+      name: "",
+      image: "",
+      description: "",
+      area: "",
+      isPlanned: false,
+    }
     fetch(`http://localhost:3001/activities`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: name,
-        area: area,
-        image: image,
-        description: description,
+        name: "",
+        area: "",
+        image: "",
+        description: "",
         isPlanned: false
       }),
     })
       .then((r) => r.json())
       .then((newAct) => onAddActivity(newAct));
-      <Navigate to="/activities/new" replace={true} />
-      setArea('');
-      setImage('');
-      setName('');
-      setImage('');
-      setDescription('')
+      // <Navigate to="/activities/new" replace={true} />
+     setFormData(formData)
   }
 
   return (
@@ -60,8 +64,8 @@ const NewActivityForm =({onAddActivity}) =>{
       <InputLabel htmlFor="component-helper"> Title of Activity..</InputLabel>
         <Input
           id="component-helper"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={formData.name}
+          onChange={(e) => setFormData({...formData, name:e.target.value})}
           aria-describedby="component-helper-text"
         />
         </FormControl>
@@ -69,8 +73,8 @@ const NewActivityForm =({onAddActivity}) =>{
         <InputLabel htmlFor="component-helper">Target Area</InputLabel>
         <Input
           id="component-helper"
-          value={area}
-          onChange={(e) => setArea(e.target.value)}
+          value={formData.area}
+          onChange={(e) => setFormData({...formData, area:e.target.value})}
           aria-describedby="component-helper-text"
         />
         <FormHelperText id="component-helper-text">
@@ -81,8 +85,8 @@ const NewActivityForm =({onAddActivity}) =>{
         <InputLabel htmlFor="component-helper">Description</InputLabel>
         <Input
           id="component-helper"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
+          value={formData.description}
+          onChange={(e) => setFormData({...formData, description:e.target.value})}
           aria-describedby="component-helper-text"
         />
         <FormHelperText id="component-helper-text">
@@ -93,8 +97,8 @@ const NewActivityForm =({onAddActivity}) =>{
         <InputLabel htmlFor="component-outlined">Picture</InputLabel>
         <OutlinedInput
           id="component-outlined"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
+          value={formData.image}
+          onChange={(e) => setFormData({...formData, image:e.target.value})}
           label="Name"
         />
          <FormHelperText id="component-helper-text">

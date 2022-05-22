@@ -43,7 +43,7 @@ isPlanned: false,
     })
       .then((r) => r.json())
       .then((newAct) => onAddActivity(newAct));
-      // <Navigate to="/activities/new" replace={true} />
+      <Navigate to="/activities/new" replace={true} />
      setFormData(formData)
   }
 

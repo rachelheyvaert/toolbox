@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 
 
 
-const ActivitiesContainer = ({handleSearch, search, setSearch, handleDeleteClick, onAddToPlans, activities}) => {
+const ActivitiesContainer = ({searchInput, setSearchInput, handleDeleteClick, onAddToPlans, activities}) => {
   
   
   const activityObj = activities.map((task)=> {
@@ -15,7 +15,7 @@ const ActivitiesContainer = ({handleSearch, search, setSearch, handleDeleteClick
     return (
       <div>
        <h1 style={{textAlign: "center"}}>Activities in Your Tool Box</h1>
-        <SearchBar  onSearch={setSearch} search={search} handleSearch={handleSearch} />
+        <SearchBar searchInput={searchInput}  setSearchInput={setSearchInput}/>
         <Grid container spacing={2}>
         {activityObj}
         </Grid>

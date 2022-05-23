@@ -2,14 +2,20 @@ import React from 'react'
 import { TextField } from '@mui/material'
 
 
-const SearchBar = ({onSearch, search}) => {
+const SearchBar = ({ setSearchInput, searchInput}) => {
+  function handleSearchChange(e){
+    console.log(e.target)
+    console.log(e.target.value)
+    setSearchInput(e.target.value);
+ 
+  }
   return (
     <form   style={{textAlign: "center"}}>
        <TextField
     id="filled-hidden-label-small"
     label="Search for an activity..."
-    value={search}
-    onChange={(e)=> onSearch(e.target.value)}/>
+    value={searchInput}
+    onChange={handleSearchChange}/>
     </form>
   )
 }

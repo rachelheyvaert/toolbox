@@ -14,12 +14,9 @@ const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDele
   function handleClick(){
     onAddToPlansClick(task.id);
   }
-  
-
-   ///deletes when refreshed only, want to update state? State is included in function...
 
   return (
-    <Card id={task.id} sx={{ maxWidth: 345, margin : '50px'}}>
+    <Card id={task.id} sx={{ maxWidth: 345, margin : '50px', color: "#99746B"}}>
       <CardMedia
         component="img"
         height="140"

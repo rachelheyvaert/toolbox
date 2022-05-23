@@ -7,11 +7,11 @@ import PlannedContainer from "./PlannedContainer";
 const baseUrl = `http://localhost:3001/activities`
 
 const MainContainer = () => {
-const [activities, setActivities] = useState([])
-const [plans, setPlans] = useState([]);
-const [search, setSearch] = useState("")
+  const [activities, setActivities] = useState([]);
+  const [plans, setPlans] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
 
-useEffect(()=> {
+  useEffect(()=> {
   fetch(baseUrl)
   .then((r)=>r.json())
   .then((data)=>{
@@ -19,16 +19,26 @@ useEffect(()=> {
      setPlans(plannedActivties)
       setActivities(data)
   })
-},[])
+  },[])
 
-
-function handleSearch(){
-    const displayActivities = activities.filter((activity)=>{ 
-        if(search !== ""){
-           return activity.name.toLowerCase().includes(search.toLowerCase())
-        } setActivities(displayActivities)
-    })
-}
+const activitiesToDisplay = activities.filter((activity)=>{
+  if(searchInput !== "") {
+    return activity.name.toLowerCase().includes(searchInput.toLowerCase()) 
+  } else{
+    return activities
+  }
+  }
+)
+//new approach
+// function handleSearch(){
+//     const displayActivities = activities.filter((activity)=>{ 
+//         if(search !== ""){
+//            return activity.name.toLowerCase().includes(search.toLowerCase())
+//         }}
+//      );
+//      setActivities(displayActivities)
+//      console.log("here", displayActivities)
+// }
 
 
 function handleAddNewActivity(newTask){
@@ -39,18 +49,19 @@ function handleAddNewActivity(newTask){
 function handleAddToPlanner(taskId){
    const taskInPlans = checkIfInPlanner(taskId)
     if(!taskInPlans){
-    const taskToAdd = activities.find((activity)=> taskId === activity.id)
-    fetch(`http://localhost:3001/activities/${taskId}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            ...taskToAdd,
-          isPlanned: true  }),
-        },
-        setPlans([...plans, taskToAdd])
-        )}
+      const taskToAdd = activities.find((activity)=> taskId === activity.id)
+      fetch(`http://localhost:3001/activities/${taskId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+              ...taskToAdd,
+            isPlanned: true  }),
+          })
+          .then((r)=> r.json())
+          .then((data)=> setPlans([...plans, taskToAdd]))
+    }
 }
 
 function handleRemoveFromPlans(task){
@@ -66,7 +77,7 @@ function handleRemoveFromPlans(task){
             })
           const updatedPlans = plans.filter((plannedTask)=> plannedTask !== task)
     setPlans(updatedPlans)
-      }
+}
 
 
 
@@ -76,11 +87,11 @@ function handleDeleteClick(task) {
         })
         const updatedActivities = activities.filter((activity)=> activity !== task)
         setActivities(updatedActivities)
-      }
+}
 
-    function checkIfInPlanner(taskIdToAdd){
+function checkIfInPlanner(taskIdToAdd){
         return plans.includes((task)=>  task.id === taskIdToAdd)
-        }
+}
 
 
 
@@ -90,10 +101,10 @@ return (
   <Route path="/" element= {<Home />} />
   <Route path="/activities"
    element={<ActivitiesContainer 
-    handleSearch={handleSearch}
-      setSearch={setSearch}
-      search={search}
-      activities={activities}
+    // handleSearch={handleSearch}
+      setSearchInput={setSearchInput}
+      searchInput={searchInput}
+      activities={activitiesToDisplay}
       handleDeleteClick={handleDeleteClick}
       onAddToPlans={handleAddToPlanner}
      setPlans={setPlans}

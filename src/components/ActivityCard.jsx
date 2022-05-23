@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {useState} from "react"
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,7 +7,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import AddTaskIcon from '@mui/icons-material/AddTask';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
 const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDeleteClick}) => {
@@ -39,7 +37,7 @@ const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDele
       <CardActions >
         <Button onClick={() => handleDeleteClick(task)} size="small"><DeleteIcon></DeleteIcon></Button>
         <div>
-     <Button style={{color:"inherit"}} size="small"  onClick={()=> handleClick()}><CheckCircleIcon></CheckCircleIcon>Save to Plan</Button>
+     <Button style={{color:"inherit"}} size="small"  onClick={()=> handleClick()}><AddTaskIcon></AddTaskIcon></Button>
      <Button style={{color:"inherit"}} size="small"  onClick={()=> handleRemoveFromPlans(task)}>Unsave</Button>
         </div>       
       </CardActions>

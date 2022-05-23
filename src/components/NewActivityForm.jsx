@@ -45,7 +45,6 @@ isPlanned: false,
       .then((newAct) => onAddActivity(newAct));
       <Navigate to="/activities/new" replace={true} />
      setFormData(formData)
-     console.log(formData)
   }
 function handleChange(e) {
  const key = e.target.id

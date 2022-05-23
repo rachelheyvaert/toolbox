@@ -48,8 +48,10 @@ function handleAddToPlanner(taskId){
         body: JSON.stringify({
             ...taskToAdd,
           isPlanned: true  }),
-        })   
-    }}
+        },
+        setPlans([...plans, taskToAdd])
+        )}
+}
 
 function handleRemoveFromPlans(task){
     console.log(task)

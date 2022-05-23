@@ -21,31 +21,40 @@ isPlanned: false,
 
   function handleSubmit(e){
     e.preventDefault()
-    const formData = {
-      name: "",
-      image: "",
-      description: "",
-      area: "",
-      isPlanned: false,
-    }
+    const formData = {name: "",
+    image: "",
+    description: "",
+    area: "",
+    isPlanned: false
+  }
     fetch(`http://localhost:3001/activities`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: "",
-        area: "",
-        image: "",
-        description: "",
-        isPlanned: false
+        ...formData,
+        name: formData.name,
+        image: formData.image,
+        description: formData.description,
+        area: formData.area,
+        isPlanned: false,
       }),
     })
       .then((r) => r.json())
       .then((newAct) => onAddActivity(newAct));
       <Navigate to="/activities/new" replace={true} />
      setFormData(formData)
+     console.log(formData)
   }
+function handleChange(e) {
+ const key = e.target.id
+  setFormData({
+    ...formData,
+[key]: e.target.value,
+  })
+  console.log(key)
+}
 
   return (
     <div>
@@ -63,18 +72,18 @@ isPlanned: false,
       <FormControl variant="standard">
       <InputLabel htmlFor="component-helper"> Title of Activity..</InputLabel>
         <Input
-          id="component-helper"
+          id="name"
           value={formData.name}
-          onChange={(e) => setFormData({...formData, name:e.target.value})}
+          onChange={handleChange}
           aria-describedby="component-helper-text"
         />
         </FormControl>
         <FormControl >
         <InputLabel htmlFor="component-helper">Target Area</InputLabel>
         <Input
-          id="component-helper"
+          id="area"
           value={formData.area}
-          onChange={(e) => setFormData({...formData, area:e.target.value})}
+          onChange={handleChange}
           aria-describedby="component-helper-text"
         />
         <FormHelperText id="component-helper-text">
@@ -84,9 +93,9 @@ isPlanned: false,
         <FormControl >
         <InputLabel htmlFor="component-helper">Description</InputLabel>
         <Input
-          id="component-helper"
+          id="description"
           value={formData.description}
-          onChange={(e) => setFormData({...formData, description:e.target.value})}
+          onChange={handleChange}
           aria-describedby="component-helper-text"
         />
         <FormHelperText id="component-helper-text">
@@ -96,9 +105,9 @@ isPlanned: false,
         <FormControl >
         <InputLabel htmlFor="component-outlined">Picture</InputLabel>
         <OutlinedInput
-          id="component-outlined"
+          id="image"
           value={formData.image}
-          onChange={(e) => setFormData({...formData, image:e.target.value})}
+          onChange={handleChange}
           label="Name"
         />
          <FormHelperText id="component-helper-text">
@@ -110,4 +119,5 @@ isPlanned: false,
     </div>
   );
 }
+
 export default NewActivityForm;

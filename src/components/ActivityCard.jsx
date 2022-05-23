@@ -11,26 +11,13 @@ import AddTaskIcon from '@mui/icons-material/AddTask';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
-const ActivityCard = ({task, onAddToPlansClick, setPlans, plans, handleDeleteClick}) => {
-  const [isPlanned, setIsPlanned] = useState(false);
+const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDeleteClick}) => {
   
   function handleClick(){
-// setIsPlanned(true);
-onAddToPlansClick(task.id);
+    onAddToPlansClick(task.id);
   }
-  function handleRemoveFromPlans(){
-    fetch(`http://localhost:3001/activities/${task.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            ...task,
-          isPlanned: false }),
-        })
-      const updatedPlans = plans.filter((plannedTask)=> plannedTask !== task)
-setPlans(updatedPlans)
-  }
+  
+
    ///deletes when refreshed only, want to update state? State is included in function...
 
   return (
@@ -53,7 +40,7 @@ setPlans(updatedPlans)
         <Button onClick={() => handleDeleteClick(task)} size="small"><DeleteIcon></DeleteIcon></Button>
         <div>
      <Button style={{color:"inherit"}} size="small"  onClick={()=> handleClick()}><CheckCircleIcon></CheckCircleIcon>Save to Plan</Button>
-     <Button style={{color:"inherit"}} size="small"  onClick={()=> handleRemoveFromPlans()}>Unsave</Button>
+     <Button style={{color:"inherit"}} size="small"  onClick={()=> handleRemoveFromPlans(task)}>Unsave</Button>
         </div>       
       </CardActions>
     </Card>

@@ -3,10 +3,12 @@ import ActivityCard from './ActivityCard'
 
 
 
-const PlannedContainer = ({plans}) => {
+const PlannedContainer = ({plans, handleRemoveFromPlans}) => {
   const plannedList = plans.map((task)=>{
-   return <ActivityCard key={task.id} task={task} plans={plans} />
-  })
+   return (
+   <ActivityCard task={task} 
+   handleRemoveFromPlans={handleRemoveFromPlans}/>
+   ) })
   return (
     <div>
       <h1 style={{textAlign: "center"}}>Your Planned Activities</h1>

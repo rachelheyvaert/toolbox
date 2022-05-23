@@ -21,16 +21,24 @@
       "area": "Articulation",
       "image": "https://ecdn.teacherspayteachers.com/thumbitem/Articulation-Cards-for-Speech-Therapy-Activities-and-Drill-Sheets-2951817-1652713535/original-2951817-1.jpg",
       "description": "Each MULTI-LEVEL CARD includes:  picture word phrase sentence sound-loaded sentence -Target sounds are phonemically isolated and underlined.",
-      "isPlanned": false,
+      "isPlanned": true,
       "id": 6
     },
     {
-      "name": "",
+      "name": "Bubbles",
+      "image": "https://res.cloudinary.com/forallpromos/image/fetch/f_auto/https://www.4allpromos.com/sites/default/files/imagecache/420x420/images/products/1164614/376-WL703X.jpg",
+      "description": " bubbles to promote eye contact, encourage requesting, turn taking, teach sounds, and lip rounding",
       "area": "",
-      "image": "",
-      "description": "",
       "isPlanned": false,
       "id": 7
+    },
+    {
+      "name": "Bubbles",
+      "image": "https://res.cloudinary.com/forallpromos/image/fetch/f_auto/https://www.4allpromos.com/sites/default/files/imagecache/420x420/images/products/1164614/376-WL703X.jpg",
+      "description": " bubbles to promote eye contact, encourage requesting, turn taking, teach sounds, and lip rounding",
+      "area": "",
+      "isPlanned": false,
+      "id": 8
     }
   ]
 }

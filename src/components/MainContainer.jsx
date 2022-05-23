@@ -6,7 +6,7 @@ import ActivitiesContainer from "./ActivitiesContainer";
 import PlannedContainer from "./PlannedContainer";
 const baseUrl = `http://localhost:3001/activities`
 
-const PageContainer = () => {
+const MainContainer = () => {
 const [activities, setActivities] = useState([])
 const [plans, setPlans] = useState([]);
 const [search, setSearch] = useState("")
@@ -21,11 +21,14 @@ useEffect(()=> {
   })
 },[])
 
-const displayActivities = activities.filter((activity)=>{ 
-if(search !== ""){
-   return activity.name.toLowerCase().includes(search.toLowerCase())
-} return (activities)
-});
+
+function handleSearch(){
+    const displayActivities = activities.filter((activity)=>{ 
+        if(search !== ""){
+           return activity.name.toLowerCase().includes(search.toLowerCase())
+        } setActivities(displayActivities)
+    })
+}
 
 
 function handleAddNewActivity(newTask){
@@ -48,8 +51,24 @@ function handleAddToPlanner(taskId){
         })   
     }}
 
-    function handleDeleteClick(task) {
-        console.log(task)
+function handleRemoveFromPlans(task){
+    console.log(task)
+        fetch(`http://localhost:3001/activities/${task.id}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                ...task,
+              isPlanned: false }),
+            })
+          const updatedPlans = plans.filter((plannedTask)=> plannedTask !== task)
+    setPlans(updatedPlans)
+      }
+
+
+
+function handleDeleteClick(task) {
         fetch(`http://localhost:3001/activities/${task.id}`, {
           method: "DELETE",
         })
@@ -60,7 +79,8 @@ function handleAddToPlanner(taskId){
     function checkIfInPlanner(taskIdToAdd){
         return plans.includes((task)=>  task.id === taskIdToAdd)
         }
-    
+
+
 
 return (
 <div>
@@ -68,17 +88,17 @@ return (
   <Route path="/" element= {<Home />} />
   <Route path="/activities"
    element={<ActivitiesContainer 
-    setDisplay={setActivities}
-     displayedActivities={displayActivities} 
+    handleSearch={handleSearch}
       setSearch={setSearch}
       search={search}
+      activities={activities}
       handleDeleteClick={handleDeleteClick}
       onAddToPlans={handleAddToPlanner}
      setPlans={setPlans}
      plans={plans}/>} 
       />
     <Route path="/activities/new" element={<NewActivityForm onAddActivity={handleAddNewActivity} />} />
-    <Route path="/activities/planned" element={<PlannedContainer plans={plans} />} />
+    <Route path="/activities/planned" element={<PlannedContainer plans={plans} handleRemoveFromPlans={handleRemoveFromPlans} />} />
 </Routes>
 </div>
 
@@ -88,4 +108,4 @@ return (
 );
 }
 
-export default PageContainer
+export default MainContainer

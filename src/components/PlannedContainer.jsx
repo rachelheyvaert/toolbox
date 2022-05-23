@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 const PlannedContainer = ({plans, handleRemoveFromPlans}) => {
   const plannedList = plans.map((task)=>{
    return (
-   <ActivityCard task={task} 
+   <ActivityCard task={task} key={task.id}
    handleRemoveFromPlans={handleRemoveFromPlans}/>
    ) })
   return (

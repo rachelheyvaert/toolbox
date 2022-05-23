@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -10,9 +11,11 @@ import AddTaskIcon from '@mui/icons-material/AddTask';
 
 
 const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDeleteClick}) => {
-  
+  const [click, setClick] = useState(false);
+
   function handleClick(){
     onAddToPlansClick(task.id);
+    setClick(true)
   }
 
   return (
@@ -34,7 +37,7 @@ const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDele
       <CardActions >
         <Button onClick={() => handleDeleteClick(task)} size="small"><DeleteIcon></DeleteIcon></Button>
         <div>
-     <Button style={{color:"inherit"}} size="small"  onClick={()=> handleClick()}><AddTaskIcon></AddTaskIcon></Button>
+     <Button disabled={click} style={{color:"inherit"}} size="small"  onClick={()=> handleClick()}><AddTaskIcon></AddTaskIcon></Button>
      <Button style={{color:"inherit"}} size="small"  onClick={()=> handleRemoveFromPlans(task)}>Unsave</Button>
         </div>       
       </CardActions>

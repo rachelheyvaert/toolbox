@@ -4,11 +4,9 @@ import { TextField } from '@mui/material'
 
 const SearchBar = ({ setSearchInput, searchInput}) => {
   function handleSearchChange(e){
-    console.log(e.target)
-    console.log(e.target.value)
     setSearchInput(e.target.value);
- 
-  }
+  };
+
   return (
     <form   style={{textAlign: "center"}}>
        <TextField
@@ -18,6 +16,6 @@ const SearchBar = ({ setSearchInput, searchInput}) => {
     onChange={handleSearchChange}/>
     </form>
   )
-}
+};
 
-export default SearchBar
+export default SearchBar;

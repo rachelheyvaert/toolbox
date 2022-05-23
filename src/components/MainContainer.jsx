@@ -21,46 +21,39 @@ const MainContainer = () => {
   })
   },[])
 
+
 const activitiesToDisplay = activities.filter((activity)=>{
-  if(searchInput !== "") {
-    return activity.name.toLowerCase().includes(searchInput.toLowerCase()) 
-  } else{
-    return activities
-  }
+  if(searchInput !== "") {    
+    return activity.name.toLowerCase().includes(searchInput.toLowerCase()); 
+  }   else {
+        return activities;
+    }
   }
 )
-//new approach
-// function handleSearch(){
-//     const displayActivities = activities.filter((activity)=>{ 
-//         if(search !== ""){
-//            return activity.name.toLowerCase().includes(search.toLowerCase())
-//         }}
-//      );
-//      setActivities(displayActivities)
-//      console.log("here", displayActivities)
-// }
-
 
 function handleAddNewActivity(newTask){
     const updatedActvities = [...activities, newTask];
     setActivities(updatedActvities)
 }
 
+
+
 function handleAddToPlanner(taskId){
-   const taskInPlans = checkIfInPlanner(taskId)
-    if(!taskInPlans){
-      const taskToAdd = activities.find((activity)=> taskId === activity.id)
+  
+  const task = plans.find((activity)=> taskId === activity.id)
+  console.log(task)
+    if(!task){
       fetch(`http://localhost:3001/activities/${taskId}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-              ...taskToAdd,
+              ...task,
             isPlanned: true  }),
           })
           .then((r)=> r.json())
-          .then((data)=> setPlans([...plans, taskToAdd]))
+          .then((taskToAdd)=> setPlans([...plans, taskToAdd]))
     }
 }
 
@@ -89,9 +82,7 @@ function handleDeleteClick(task) {
         setActivities(updatedActivities)
 }
 
-function checkIfInPlanner(taskIdToAdd){
-        return plans.includes((task)=>  task.id === taskIdToAdd)
-}
+
 
 
 
@@ -101,14 +92,14 @@ return (
   <Route path="/" element= {<Home />} />
   <Route path="/activities"
    element={<ActivitiesContainer 
-    // handleSearch={handleSearch}
       setSearchInput={setSearchInput}
       searchInput={searchInput}
       activities={activitiesToDisplay}
       handleDeleteClick={handleDeleteClick}
       onAddToPlans={handleAddToPlanner}
-     setPlans={setPlans}
-     plans={plans}/>} 
+      setPlans={setPlans}
+      plans={plans}
+/>} 
       />
     <Route path="/activities/new" element={<NewActivityForm onAddActivity={handleAddNewActivity} />} />
     <Route path="/activities/planned" element={<PlannedContainer plans={plans} handleRemoveFromPlans={handleRemoveFromPlans} />} />

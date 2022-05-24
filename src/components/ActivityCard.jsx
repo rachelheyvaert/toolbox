@@ -15,7 +15,7 @@ const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDele
 
   function handleClick(){
     onAddToPlansClick(task.id);
-    setClick(true)
+    setClick(true);
   }
 
   return (

@@ -6,12 +6,15 @@ import Grid from '@mui/material/Grid';
 const PlannedContainer = ({plans, handleRemoveFromPlans}) => {
   const plannedList = plans.map((task)=>{
    return (
-   <ActivityCard task={task} key={task.id}
-   handleRemoveFromPlans={handleRemoveFromPlans}/>
-   ) })
+    <ActivityCard 
+    task={task}
+    key={task.id}
+    handleRemoveFromPlans={handleRemoveFromPlans}/>) 
+  })
+
   return (
     <div>
-      <h1 style={{textAlign: "center"}}>Your Planned Activities</h1>
+      <h1 style={{textAlign: "center"}}>Planned Activities</h1>
       <Grid container spacing={1}>
       {plannedList}
       </Grid>

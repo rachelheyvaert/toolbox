@@ -10,7 +10,7 @@ const ActivitiesContainer = ({searchInput, setSearchInput, handleDeleteClick, on
   
   const activityObj = activities.map((task)=> {
     return <ActivityCard handleDeleteClick={handleDeleteClick} key={task.id} task={task}  onAddToPlansClick={onAddToPlans} />
-  })
+  });
  
     return (
       <div>

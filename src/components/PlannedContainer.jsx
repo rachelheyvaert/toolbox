@@ -1,20 +1,23 @@
 import React from 'react'
 import ActivityCard from './ActivityCard'
 import Grid from '@mui/material/Grid';
-
+import { Typography } from '@mui/material';
 
 const PlannedContainer = ({plans, handleRemoveFromPlans}) => {
   const plannedList = plans.map((task)=>{
-   return (
-    <ActivityCard 
+   return ( <div>
+ <ActivityCard 
     task={task}
     key={task.id}
-    handleRemoveFromPlans={handleRemoveFromPlans}/>) 
+    handleRemoveFromPlans={handleRemoveFromPlans}/>
+   </div>
+   ) 
   })
 
   return (
     <div>
-      <h1 style={{textAlign: "center"}}>Planned Activities</h1>
+      <Typography sx={{ flexGrow: 5 }} mt="20px"variant="h3" align="center" style={{color:"#023047"}} >
+           Planned Activities</Typography>
       <Grid container spacing={1}>
       {plannedList}
       </Grid>

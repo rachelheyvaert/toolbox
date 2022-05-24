@@ -8,25 +8,26 @@ import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Button from '@mui/material/Button';
 import { Navigate } from "react-router-dom"
+import { Typography } from '@mui/material';
 
 
 const NewActivityForm =({onAddActivity}) =>{
-const [formData, setFormData] = useState({
-name: "",
-image: "",
-description: "",
-area: "",
-isPlanned: false,
-})
+  const [formData, setFormData] = useState({
+    name: "",
+    image: "",
+    description: "",
+    area: "",
+    isPlanned: false,
+  })
 
   function handleSubmit(e){
     e.preventDefault()
     const formData = {name: "",
-    image: "",
-    description: "",
-    area: "",
-    isPlanned: false
-  }
+      image: "",
+      description: "",
+      area: "",
+      isPlanned: false
+    }
     fetch(`http://localhost:3001/activities`, {
       method: "POST",
       headers: {
@@ -54,10 +55,11 @@ function handleChange(e) {
   })
   console.log(key)
 }
-
+//trying to change color of inputs
   return (
     <div>
-    <h1 style={{textAlign: "center"}}>Create a New Tool</h1>
+   <Typography sx={{ flexGrow: 5 }} mt="20px"variant="h3" align="center" style={{color:"#023047"}} >
+          Create an Activity</Typography>
     <Box onSubmit={handleSubmit}
       component="form"
       sx={{
@@ -66,15 +68,15 @@ function handleChange(e) {
       }}
       noValidate
       autoComplete="off"
-      style={{textAlign: "center", backgroundColor:"#cba477", marginLeft:"10%", marginRight: "10%"}}
+      style={{textAlign: "center", backgroundColor:"#219ebc", marginLeft:"10%", marginRight: "10%"}}
     >
-      <FormControl variant="standard">
-      <InputLabel htmlFor="component-helper"> Title of Activity..</InputLabel>
-        <Input
+      <FormControl  variant="standard" >
+      <InputLabel style={{backgroundColor:"ffb703"}} > Title of Activity..</InputLabel>
+        <Input style={{backgroundColor:"ffb703"}}
           id="name"
           value={formData.name}
           onChange={handleChange}
-          aria-describedby="component-helper-text"
+          
         />
         </FormControl>
         <FormControl >

@@ -8,13 +8,15 @@ const SearchBar = ({ setSearchInput, searchInput}) => {
   };
 
   return (
+    <div>
     <form   style={{textAlign: "center"}}>
-       <TextField
-    id="filled-hidden-label-small"
+       <TextField style={{backgroundColor: "#8ecae6" }}
+       color="warning"
     label="Search for an activity..."
     value={searchInput}
     onChange={handleSearchChange}/>
     </form>
+    </div>
   )
 };
 

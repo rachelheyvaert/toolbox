@@ -71,51 +71,52 @@ function handleChange(e) {
       style={{textAlign: "center", backgroundColor:"#219ebc", marginLeft:"10%", marginRight: "10%"}}
     >
       <FormControl  variant="standard" >
-      <InputLabel style={{backgroundColor:"ffb703"}} > Title of Activity..</InputLabel>
-        <Input style={{backgroundColor:"ffb703"}}
+      <InputLabel style={{color:"#ffb703"}}> Title of Activity..</InputLabel>
+        <Input 
           id="name"
           value={formData.name}
           onChange={handleChange}
-          
+          color="warning"
         />
         </FormControl>
-        <FormControl >
-        <InputLabel htmlFor="component-helper">Target Area</InputLabel>
+        <FormControl>
+        <InputLabel style={{color:"#ffb703"}}>Target Area</InputLabel>
         <Input
           id="area"
           value={formData.area}
           onChange={handleChange}
-          aria-describedby="component-helper-text"
+          color="warning"
         />
-        <FormHelperText id="component-helper-text">
+        <FormHelperText style={{color:"white"}}>
           Langauge, Articulation, Pagmatics, Fluency, etc.
         </FormHelperText>
         </FormControl>
         <FormControl >
-        <InputLabel htmlFor="component-helper">Description</InputLabel>
+        <InputLabel style={{color:"#ffb703"}} htmlFor="component-helper">Description</InputLabel>
         <Input
           id="description"
           value={formData.description}
           onChange={handleChange}
-          aria-describedby="component-helper-text"
+          color="warning"
         />
-        <FormHelperText id="component-helper-text">
+        <FormHelperText  style={{color:"white"}}>
           What is the purpose of the activity?
         </FormHelperText>
         </FormControl>
         <FormControl >
-        <InputLabel htmlFor="component-outlined">Picture</InputLabel>
+        <InputLabel style={{color:"#ffb703"}} htmlFor="component-outlined">Picture</InputLabel>
         <OutlinedInput
           id="image"
           value={formData.image}
           onChange={handleChange}
-          label="Name"
+          label="name"
+          color="warning"
         />
-         <FormHelperText id="component-helper-text">
+         <FormHelperText style={{color:"white"}}>
           Link an image 
         </FormHelperText>
       </FormControl>
-      <Button type="submit" variant="contained">Add Activity</Button>
+      <Button style={{backgroundColor:"#fb8500"}} type="submit" variant="contained">Add Activity</Button>
     </Box>
     </div>
   );

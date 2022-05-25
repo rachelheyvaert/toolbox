@@ -7,7 +7,6 @@ import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Button from '@mui/material/Button';
-import { Navigate } from "react-router-dom"
 import { Typography } from '@mui/material';
 
 
@@ -19,15 +18,17 @@ const NewActivityForm =({onAddActivity}) =>{
     area: "",
     isPlanned: false,
   })
-
-  function handleSubmit(e){
-    e.preventDefault()
-    const formData = {name: "",
+   const formDataEmpty = {
+      name: "",
       image: "",
       description: "",
       area: "",
       isPlanned: false
     }
+
+  function handleSubmit(e){
+    e.preventDefault()
+   
     fetch(`http://localhost:3001/activities`, {
       method: "POST",
       headers: {
@@ -44,8 +45,9 @@ const NewActivityForm =({onAddActivity}) =>{
     })
       .then((r) => r.json())
       .then((newAct) => onAddActivity(newAct));
-      <Navigate to="/activities/new" replace={true} />
-     setFormData(formData)
+     setFormData(formData);
+     setFormData(formDataEmpty);
+
   }
 function handleChange(e) {
  const key = e.target.id
@@ -53,9 +55,8 @@ function handleChange(e) {
     ...formData,
 [key]: e.target.value,
   })
-  console.log(key)
+  console.log(formData)
 }
-//trying to change color of inputs
   return (
     <div>
    <Typography sx={{ flexGrow: 5 }} mt="20px"variant="h3" align="center" style={{color:"#023047"}} >

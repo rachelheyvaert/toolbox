@@ -6,7 +6,7 @@ import { Typography } from '@mui/material';
 
 
 
-const ActivitiesContainer = ({searchInput, setSearchInput, handleDeleteClick, onAddToPlans, activities}) => {
+const ActivitiesContainer = ({searchInput, setSearchInput, filterBy, setFilterBy, handleDeleteClick, onAddToPlans, activities}) => {
   
   
   const activityObj = activities.map((task)=> {
@@ -17,8 +17,7 @@ const ActivitiesContainer = ({searchInput, setSearchInput, handleDeleteClick, on
       <div>
         <Typography sx={{ flexGrow: 5 }} mt="20px"variant="h3" align="center" style={{color:"#023047"}} >
            Activities in Your Tool Box</Typography>
-        <SearchBar searchInput={searchInput}  setSearchInput={setSearchInput}/>
-        <Grid container spacing={2}>
+        <SearchBar searchInput={searchInput}  setSearchInput={setSearchInput} filterBy={filterBy} setFilterBy={setFilterBy}/>       <Grid container spacing={2} ml="40px">
         {activityObj}
         </Grid>
      </div>

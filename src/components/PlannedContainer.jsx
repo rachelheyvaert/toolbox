@@ -18,7 +18,7 @@ const PlannedContainer = ({plans, handleRemoveFromPlans}) => {
     <div>
       <Typography sx={{ flexGrow: 5 }} mt="20px"variant="h3" align="center" style={{color:"#023047"}} >
            Planned Activities</Typography>
-      <Grid container spacing={1}>
+      <Grid container spacing={1} ml="40px">
       {plannedList}
       </Grid>
     </div>

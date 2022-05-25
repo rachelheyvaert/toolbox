@@ -10,6 +10,7 @@ const MainContainer = () => {
   const [activities, setActivities] = useState([]);
   const [plans, setPlans] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [filterBy, setFilterBy] = useState("All")
 
   useEffect(()=> {
     fetch(baseUrl)
@@ -29,6 +30,15 @@ const MainContainer = () => {
         return activities;
       }
   })
+
+  const filteredActivities = activitiesToDisplay.filter((activity)=>{
+    if(filterBy !== "All"){
+      return activity.area === filterBy
+    } else {
+      return activitiesToDisplay
+    }
+  });
+
 
   function handleAddNewActivity(newTask){
     const updatedActvities = [...activities, newTask];
@@ -92,7 +102,9 @@ return (
       element={<ActivitiesContainer 
           setSearchInput={setSearchInput}
           searchInput={searchInput}
-          activities={activitiesToDisplay}
+          filterBy={filterBy}
+          setFilterBy={setFilterBy}
+          activities={filteredActivities}
           handleDeleteClick={handleDeleteClick}
           onAddToPlans={handleAddToPlanner}
           setPlans={setPlans}

@@ -5,7 +5,7 @@
       "area": "Language",
       "image": "https://www.virtualspeechcenter.com/Images/AppScreenShots/2/Image1.png",
       "description": "practice auditory comprehension and verbal expression by answering wh-questions. Children will have fun playing the colorful animated board game and earning rewards while practicing wh-questions with real -life photos.",
-      "isPlanned": true,
+      "isPlanned": false,
       "id": 4
     },
     {
@@ -29,22 +29,22 @@
       "image": "https://res.cloudinary.com/forallpromos/image/fetch/f_auto/https://www.4allpromos.com/sites/default/files/imagecache/420x420/images/products/1164614/376-WL703X.jpg",
       "description": " bubbles to promote eye contact, encourage requesting, turn taking, teach sounds, and lip rounding",
       "area": "",
-      "isPlanned": true,
+      "isPlanned": false,
       "id": 7
     },
     {
-      "name": "",
-      "image": "",
-      "description": "",
-      "area": "",
+      "name": "Minimal Pairs",
+      "image": "https://ecdn.teacherspayteachers.com/thumbitem/Fronting-Minimal-Pairs-2164967-1500873560/original-2164967-3.jpg",
+      "description": "Increase awarenness of sounds to reduce phonological processes",
+      "area": "Articulation",
       "isPlanned": false,
       "id": 8
     },
     {
-      "name": "",
-      "image": "",
-      "description": "",
-      "area": "",
+      "name": "About Me Question Cards",
+      "image": "https://www.superduperinc.com/media/catalog/product/f/d/fd80-00-spread.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=540&width=540&canvas=540:540&dpr=2%202x",
+      "description": "lustrated question cards to encourage children to talk about themselves and ask questions to family and friends. Includes basic questions and open-ended questions. ",
+      "area": "Pragmatics, Language",
       "isPlanned": false,
       "id": 9
     }

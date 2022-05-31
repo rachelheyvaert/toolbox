@@ -8,12 +8,8 @@ import Typography from '@mui/material/Typography';
 
 const PlannedCard = ({task, handleRemove})=> {
   
-    function handleClick(){
-        handleRemove(task.id)
-    }
-
     return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card id={task.id} sx={{ maxWidth: 345, background:"#023047",margin:"50px", border:"solid" }}>
       <CardMedia
         component="img"
         height="140"
@@ -21,17 +17,17 @@ const PlannedCard = ({task, handleRemove})=> {
         alt={task.name}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" color="#ffb703" component="div">
           {task.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="white">
           {task.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" onClick={handleClick}>Remove</Button>
+        <Button size="small" onClick={()=>handleRemove(task)}>Remove</Button>
       </CardActions>
     </Card>
   );
 }
-export default PlannedCard
+export default PlannedCard;

@@ -21,7 +21,7 @@ const ActivityCard = ({task, onAddToPlansClick, handleDeleteClick}) => {
 
   return (
     <Card id={task.id} sx={{ maxWidth: 345,
-     margin:"50px", color: "#99746B", border:"solid"}}>
+     margin:"50px", background: "#023047", border:"solid"}}>
       <CardMedia
         component="img"
         height="140"
@@ -29,7 +29,7 @@ const ActivityCard = ({task, onAddToPlansClick, handleDeleteClick}) => {
         alt={task.name}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" style={{color: "#fb8500"}}>
+        <Typography gutterBottom variant="h5" style={{color: "white"}}>
          {task.name}
         </Typography>
         <Typography variant="body1" style={{color: "#ffb703"}}>
@@ -47,7 +47,6 @@ const ActivityCard = ({task, onAddToPlansClick, handleDeleteClick}) => {
           {click ? <CheckCircleIcon style={{color: "#8ecae6"}}></CheckCircleIcon> 
           : <AddTaskIcon></AddTaskIcon>}
         </Button>
-        
       </CardActions>
     </Card>
   );

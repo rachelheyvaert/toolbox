@@ -3,8 +3,8 @@ Tool Box is a React single page web application with client-side routing and a R
  
 ## Installation
  
-Fork and clone the repository into your desired directory. Open the repo and run "npm install && npm start". The database of stocks can be found in a JSON-server, so after you start your React server, make sure to start your JSON-server on http://localhost:3001/acttivities.
- 
+Fork and clone the repository into your desired directory. In the project directory, you can run: npm install or yarn install to load the accompanying package.
+This project was bootstrapped with Create React App.npm start. To start the React server run: "npm start" in the terminal. The database of activities can be found in the JSON-server, so after you start your React server, make sure to start your JSON-server on http://localhost:3001/acttivities.
 To install: npm install -g json-server
 To start: json-server --watch db.json --port 3001
  
@@ -22,11 +22,8 @@ If the user wishes to delete an activity, you may do so by clicking the trash ca
 gif
  
  
-## Looking Ahead
-In the future there will be a filter to sort both alphabetically and by target area next to the search bar.
- 
 ## Support
-For questions, comments or concerns, email rachelheyvaert@gmail.com
+For questions, comments, or concerns, email rachelheyvaert@gmail.com
  
 ## Acknowledgement
 UI and styling was implemented from MUI

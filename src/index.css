@@ -5,8 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(image4.jpg);
-  background-size:100%;
   
 }
 
@@ -14,3 +12,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.filter {
+  background-color: #fb8500;
+  color: white;
+  size: 20px;
+}
+

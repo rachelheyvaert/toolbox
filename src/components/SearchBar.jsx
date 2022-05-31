@@ -14,14 +14,15 @@ const SearchBar = ({ setSearchInput, searchInput, filterBy, setFilterBy}) => {
   return (
     <div style={{textAlign: "center"}}>
     <form >
-       <TextField style={{backgroundColor: "#8ecae6" }}
+       <TextField 
+       style={{backgroundColor: "#8ecae6" }}
        color="warning"
     label="Search for an activity..."
     value={searchInput}
     onChange={handleSearchChange}/>
     </form>
-   <label>
-    <select onChange={handleFilterChange} value={filterBy}>
+   <label >
+    <select className="filter" onChange={handleFilterChange} value={filterBy}>
       <option value="All">Filter by...</option>
       <option value="Language">Language</option>
       <option value="Articulation">Articulation</option>

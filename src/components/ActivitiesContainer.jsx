@@ -15,9 +15,10 @@ const ActivitiesContainer = ({searchInput, setSearchInput, filterBy, setFilterBy
  
     return (
       <div>
-        <Typography sx={{ flexGrow: 5 }} mt="20px"variant="h3" align="center" style={{color:"#023047"}} >
+        <Typography sx={{ flexGrow: 5 }} font="Monaco" mt="20px"variant="h3" align="center" style={{color:"#023047"}} >
            Activities in Your Tool Box</Typography>
-        <SearchBar searchInput={searchInput}  setSearchInput={setSearchInput} filterBy={filterBy} setFilterBy={setFilterBy}/>       <Grid container spacing={2} ml="40px">
+        <SearchBar searchInput={searchInput}  setSearchInput={setSearchInput} filterBy={filterBy} setFilterBy={setFilterBy}/>   
+       <Grid container spacing={2} ml="40px">
         {activityObj}
         </Grid>
      </div>

@@ -12,6 +12,7 @@ const MainContainer = () => {
   const [searchInput, setSearchInput] = useState("");
   const [filterBy, setFilterBy] = useState("All")
 
+
   useEffect(()=> {
     fetch(baseUrl)
     .then((r)=>r.json())
@@ -94,7 +95,9 @@ const MainContainer = () => {
 
 return (
   <div>
+  
     <Routes>
+  
       <Route path="/"
       element= {<Home />} 
       />

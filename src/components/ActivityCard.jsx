@@ -11,7 +11,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import AddTaskIcon from '@mui/icons-material/AddTask';
 
 
-const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDeleteClick}) => {
+const ActivityCard = ({task, onAddToPlansClick, handleDeleteClick}) => {
   const [click, setClick] = useState(false);
 
   function handleClick(){
@@ -20,7 +20,8 @@ const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDele
   }
 
   return (
-    <Card id={task.id} sx={{ maxWidth: 345, margin : '50px', color: "#99746B", border:"solid", borderColor:"#023047"}}>
+    <Card id={task.id} sx={{ maxWidth: 345,
+     margin:"50px", color: "#99746B", border:"solid"}}>
       <CardMedia
         component="img"
         height="140"
@@ -32,7 +33,7 @@ const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDele
          {task.name}
         </Typography>
         <Typography variant="body1" style={{color: "#ffb703"}}>
-        Target area: {task.area}
+        Targets: {task.area}
         </Typography>
         <Typography variant="body2" style={{color: "#219ebc"}}>
           {task.description}
@@ -46,8 +47,7 @@ const ActivityCard = ({task, handleRemoveFromPlans,onAddToPlansClick, handleDele
           {click ? <CheckCircleIcon style={{color: "#8ecae6"}}></CheckCircleIcon> 
           : <AddTaskIcon></AddTaskIcon>}
         </Button>
-        <Button disabled={click} style={{color:"023047"}} size="small" onClick={()=> handleRemoveFromPlans(task)}> {click ? "Added to plans!" : "remove" }
-        </Button>
+        
       </CardActions>
     </Card>
   );

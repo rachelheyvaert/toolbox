@@ -29,7 +29,7 @@
       "image": "https://res.cloudinary.com/forallpromos/image/fetch/f_auto/https://www.4allpromos.com/sites/default/files/imagecache/420x420/images/products/1164614/376-WL703X.jpg",
       "description": " bubbles to promote eye contact, encourage requesting, turn taking, teach sounds, and lip rounding",
       "area": "",
-      "isPlanned": false,
+      "isPlanned": true,
       "id": 7
     },
     {
@@ -45,7 +45,7 @@
       "image": "https://www.superduperinc.com/media/catalog/product/f/d/fd80-00-spread.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=540&width=540&canvas=540:540&dpr=2%202x",
       "description": "lustrated question cards to encourage children to talk about themselves and ask questions to family and friends. Includes basic questions and open-ended questions. ",
       "area": "Pragmatics, Language",
-      "isPlanned": false,
+      "isPlanned": true,
       "id": 9
     }
   ]

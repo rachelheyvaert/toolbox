@@ -1,22 +1,19 @@
 import React from 'react'
-import ActivityCard from './ActivityCard'
+import PlannedCard from './PlannedCard'
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 
 const PlannedContainer = ({plans, handleRemoveFromPlans}) => {
   const plannedList = plans.map((task)=>{
-   return ( <div>
-     <Grid>
-     <Button style={{color:"023047"}} ml="10%" align="center" size="small" onClick={()=> handleRemoveFromPlans(task)}> Remove?
-      </Button>
-      <ActivityCard 
+   return ( 
+     <div>
+   <PlannedCard
           task={task}
           key={task.id}
+          handleRemove={handleRemoveFromPlans}
            />
-     </Grid>
-   
-   </div>
+           </div>
    ) 
   })
 

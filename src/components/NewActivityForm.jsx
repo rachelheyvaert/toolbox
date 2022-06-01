@@ -63,13 +63,8 @@ function handleChange(e) {
           Create an Activity</Typography>
     <Box onSubmit={handleSubmit}
       component="form"
-      sx={{
-        '& > :not(style)': { m: 8},
-        
-      }}
-      noValidate
-      autoComplete="off"
-      style={{textAlign: "center", backgroundColor:"#219ebc", marginLeft:"10%", marginRight: "10%"}}
+      sx={{ '& > :not(style)': { m: 8} }}
+      style={{textAlign: "center", backgroundColor:"#219ebc", marginLeft:"10%", marginRight: "10%", marginTop:"3%"}}
     >
       <FormControl  variant="standard" >
       <InputLabel style={{color:"#ffb703"}}> Title of Activity..</InputLabel>

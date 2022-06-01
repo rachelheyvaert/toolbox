@@ -80,7 +80,6 @@ const MainContainer = () => {
   }
 
 
-
   function handleDeleteClick(task) {
     fetch(`http://localhost:3001/activities/${task.id}`, {
        method: "DELETE",

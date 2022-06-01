@@ -7,6 +7,8 @@ Fork and clone the repository into your desired directory. In the project direct
 This project was bootstrapped with Create React App.npm start. To start the React server run: "npm start" in the terminal. The database of activities can be found in the JSON-server, so after you start your React server, make sure to start your JSON-server on http://localhost:3001/acttivities.
 To install: npm install -g json-server
 To start: json-server --watch db.json --port 3001
+![Screen Shot 2022-06-01 at 9 24 40 AM](https://user-images.githubusercontent.com/95693987/171415093-8cbdb187-b336-4bd4-8a70-a1b72de8a6f1.png)
+
  
 ## Usage
 When the React server starts, the user will see the Home Page with a navigation bar atop the page.

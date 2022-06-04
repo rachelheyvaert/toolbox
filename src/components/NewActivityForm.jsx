@@ -59,12 +59,11 @@ function handleChange(e) {
 }
   return (
     <div>
-   <Typography sx={{ flexGrow: 5 }} mt="20px"variant="h3" align="center" style={{color:"#023047"}} >
+   <Typography sx={{ flexGrow: 5 }}  mt="20px"variant="h3" align="center" style={{color:"#023047"}}>
           Create an Activity</Typography>
-    <Box onSubmit={handleSubmit}
-      component="form"
+    <Box onSubmit={handleSubmit} 
       sx={{ '& > :not(style)': { m: 8} }}
-      style={{textAlign: "center", backgroundColor:"#219ebc", marginLeft:"10%", marginRight: "10%", marginTop:"3%"}}
+      style={{backgroundColor:"#219ebc" ,textAlign: "center", marginLeft:"10%", marginRight: "10%", marginTop:"3%"}}
     >
       <FormControl  variant="standard" >
       <InputLabel style={{color:"#ffb703"}}> Title of Activity..</InputLabel>

@@ -1,4 +1,4 @@
-import React  from  'react'
+import React, {useState}  from  'react'
 import ActivityCard from './ActivityCard'
 import SearchBar from './SearchBar';
 import Grid from '@mui/material/Grid';
@@ -6,9 +6,26 @@ import { Typography } from '@mui/material';
 
 
 
-const ActivitiesContainer = ({searchInput, setSearchInput, filterBy, setFilterBy, handleDeleteClick, onAddToPlans, activities}) => {
-  
-  
+const ActivitiesContainer = ({ handleDeleteClick, onAddToPlans, activities}) => {
+  const [searchInput, setSearchInput] = useState("");
+  const [filterBy, setFilterBy] = useState("All")
+
+  const activitiesToDisplay = activities.filter((activity)=>{
+    if(searchInput !== "") {    
+     return activity.name.toLowerCase().includes(searchInput.toLowerCase()); 
+    } else {
+        return activities;
+      }
+  })
+
+  const filteredActivities = activitiesToDisplay.filter((activity)=>{
+    if(filterBy !== "All"){
+      return activity.area === filterBy
+    } else {
+      return activitiesToDisplay
+    }
+  });
+
   const activityObj = activities.map((task)=> {
     return <ActivityCard handleDeleteClick={handleDeleteClick} key={task.id} task={task}  onAddToPlansClick={onAddToPlans} />
   });

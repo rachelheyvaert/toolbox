@@ -9,9 +9,7 @@ const baseUrl = `http://localhost:3001/activities`
 const MainContainer = () => {
   const [activities, setActivities] = useState([]);
   const [plans, setPlans] = useState([]);
-  const [searchInput, setSearchInput] = useState("");
-  const [filterBy, setFilterBy] = useState("All")
-
+  
 
   useEffect(()=> {
     fetch(baseUrl)
@@ -24,21 +22,7 @@ const MainContainer = () => {
   },[])
 
 
-  const activitiesToDisplay = activities.filter((activity)=>{
-    if(searchInput !== "") {    
-     return activity.name.toLowerCase().includes(searchInput.toLowerCase()); 
-    } else {
-        return activities;
-      }
-  })
-
-  const filteredActivities = activitiesToDisplay.filter((activity)=>{
-    if(filterBy !== "All"){
-      return activity.area === filterBy
-    } else {
-      return activitiesToDisplay
-    }
-  });
+  
 
 
   function handleAddNewActivity(newTask){
@@ -94,23 +78,16 @@ const MainContainer = () => {
 
 return (
   <div>
-  
     <Routes>
-  
       <Route path="/"
       element= {<Home />} 
       />
       <Route path="/activities"
       element={<ActivitiesContainer 
-          setSearchInput={setSearchInput}
-          searchInput={searchInput}
-          filterBy={filterBy}
-          setFilterBy={setFilterBy}
           activities={filteredActivities}
           handleDeleteClick={handleDeleteClick}
           onAddToPlans={handleAddToPlanner}
-          setPlans={setPlans}
-          plans={plans} />} 
+         />} 
       />
       <Route path="/activities/new" 
         element={<NewActivityForm 

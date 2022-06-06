@@ -59,13 +59,10 @@ function handleChange(e) {
   console.log(formData)
 }
   return (
-    <div>
-   <Typography sx={{ flexGrow: 5 }}  mt="20px"variant="h3" align="center" style={{color:"#023047"}}>
+    <div >
+   <Typography sx={{ flexGrow: 5 }}  mt="20px" variant="h3" align="center" style={{color:"#023047"}}>
           Create an Activity</Typography>
-    <Box  onSubmit={handleSubmit}
-      sx={{ '& > :not(style)': { m: 8} }}
-      style={{backgroundColor:"#219ebc", textAlign: "center", marginLeft:"10%", marginRight: "10%", marginTop:"3%"}}
-    >
+    <Box  sx={{ '& > :not(style)': { m: 8} }} style={{backgroundColor:"#219ebc", textAlign: "center", marginLeft:"10%", marginRight: "10%", marginTop:"3%"}}>
       <FormControl  variant="standard" onSubmit={handleSubmit} >
       <InputLabel style={{color:"#ffb703"}}> Title of Activity..</InputLabel>
         <Input 
@@ -112,7 +109,7 @@ function handleChange(e) {
           Link an image 
         </FormHelperText>
       </FormControl>
-      <Button   style={{backgroundColor:"#fb8500"}} type="submit" variant="contained">Add Activity</Button>
+      <Button  onClick={handleSubmit} style={{backgroundColor:"#fb8500"}} type="submit" variant="contained">Add Activity</Button>
     </Box>
     </div>
   );

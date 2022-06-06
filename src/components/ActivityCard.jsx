@@ -20,7 +20,7 @@ const ActivityCard = ({task, onAddToPlansClick, handleDeleteClick}) => {
   }
 
   return (
-    <Card id={task.id} class="cards">
+    <Card id={task.id} sx={{ maxWidth: 345, background:"#023047",margin:"50px", border:"solid" }}>
       <CardMedia  component="img" height="140"
         image={task.image}
         alt={task.name}

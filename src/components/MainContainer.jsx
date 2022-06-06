@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Routes, Route} from "react-router-dom";
 import Home from "./static/Home";
-import NewActivityForm from "./NewActivityForm"
+import Form from "./Form";
 import ActivitiesContainer from "./ActivitiesContainer";
 import PlannedContainer from "./PlannedContainer";
 const baseUrl = `http://localhost:3001/activities`
@@ -30,6 +30,7 @@ const MainContainer = () => {
   function handleAddNewActivity(newTask){
     const updatedActvities = [...activities, newTask];
     setActivities(updatedActvities);
+    console.log(newTask)
   }
 
 
@@ -112,7 +113,7 @@ return (
          />} 
       />
       <Route path="/activities/new" 
-        element={<NewActivityForm 
+        element={<Form 
         onAddActivity={handleAddNewActivity} />} 
       />
       <Route path="/activities/planned" 

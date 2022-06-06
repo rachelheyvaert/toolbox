@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 
 
-const NewActivityForm =({onAddActivity}) =>{
+const Form =({onAddActivity}) =>{
   const [formData, setFormData] = useState({
     name: "",
     image: "",
@@ -27,6 +27,7 @@ const NewActivityForm =({onAddActivity}) =>{
     }
 
   function handleSubmit(e){
+    console.log(e)
     e.preventDefault()
    
     fetch(`http://localhost:3001/activities`, {
@@ -61,11 +62,11 @@ function handleChange(e) {
     <div>
    <Typography sx={{ flexGrow: 5 }}  mt="20px"variant="h3" align="center" style={{color:"#023047"}}>
           Create an Activity</Typography>
-    <Box onSubmit={handleSubmit} 
+    <Box  onSubmit={handleSubmit}
       sx={{ '& > :not(style)': { m: 8} }}
-      style={{backgroundColor:"#219ebc" ,textAlign: "center", marginLeft:"10%", marginRight: "10%", marginTop:"3%"}}
+      style={{backgroundColor:"#219ebc", textAlign: "center", marginLeft:"10%", marginRight: "10%", marginTop:"3%"}}
     >
-      <FormControl  variant="standard" >
+      <FormControl  variant="standard" onSubmit={handleSubmit} >
       <InputLabel style={{color:"#ffb703"}}> Title of Activity..</InputLabel>
         <Input 
           id="name"
@@ -111,10 +112,10 @@ function handleChange(e) {
           Link an image 
         </FormHelperText>
       </FormControl>
-      <Button style={{backgroundColor:"#fb8500"}} type="submit" variant="contained">Add Activity</Button>
+      <Button   style={{backgroundColor:"#fb8500"}} type="submit" variant="contained">Add Activity</Button>
     </Box>
     </div>
   );
 }
 
-export default NewActivityForm;
+export default Form;

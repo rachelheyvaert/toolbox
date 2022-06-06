@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 const PlannedCard = ({task, handleRemove})=> {
   
     return (
-    <Card  class="cards" id={task.id}>
+    <Card id={task.id} key={task.id} sx={{ maxWidth: 345, background:"#023047",margin:"50px", border:"solid" }}>
       <CardMedia component="img" height="140"
         image={task.image}
         alt={task.name}

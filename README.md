@@ -22,7 +22,7 @@ Navigating to the Planner section will display all the activities that have been
  
 If the user wishes to delete an activity, you may do so by clicking the trash can icon on the specific activity card.
 
-[![Walk Through](https://giphy.com/embed/4Ukum3xuNxF81UsTz0)
+[![Walk Through](https://giphy.com/embed/4Ukum3xuNxF81UsTz0)](https://giphy.com/embed/4Ukum3xuNxF81UsTz0)
 
  
  

@@ -20,7 +20,7 @@
       "name": "Bubbles",
       "image": "https://res.cloudinary.com/forallpromos/image/fetch/f_auto/https://www.4allpromos.com/sites/default/files/imagecache/420x420/images/products/1164614/376-WL703X.jpg",
       "description": " bubbles to promote eye contact, encourage requesting, turn taking, teach sounds, and lip rounding",
-      "area": "",
+      "area": "Pragmatics",
       "isPlanned": false,
       "id": 7
     },
@@ -36,9 +36,57 @@
       "name": "About Me Question Cards",
       "image": "https://www.superduperinc.com/media/catalog/product/f/d/fd80-00-spread.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=540&width=540&canvas=540:540&dpr=2%202x",
       "description": "lustrated question cards to encourage children to talk about themselves and ask questions to family and friends. Includes basic questions and open-ended questions. ",
-      "area": "Pragmatics, Language",
+      "area": "Language",
       "isPlanned": false,
       "id": 9
+    },
+    {
+      "name": "Fun & Functional App",
+      "image": "https://i0.wp.com/www.smartyearsapps.com/wp-content/uploads/2012/12/ff-img1.png?fit=159%2C160&ssl=1",
+      "description": "improve language comprehension and expression in individuals of all age groups. The ability to identify and describe the function or use of real-world objects is a key language and life skill.",
+      "area": "Language",
+      "isPlanned": false,
+      "id": 10
+    },
+    {
+      "name": "Comic Strip Social Story",
+      "image": "https://ecdn.teacherspayteachers.com/thumbitem/Comic-Strip-Template-5135356-1649772689/original-5135356-1.jpg",
+      "description": "imple illustrations that show two or more people having a conversation using short sentences. Some children with autism learn better with visuals, so creating comic strips can be an effective tool. Constructing cartoon strips for kids is an enjoyable way for young people to communicate their thoughts and feelings while building the imagination.",
+      "area": "Pragmatics",
+      "isPlanned": false,
+      "id": 11
+    },
+    {
+      "name": "Say & Do",
+      "image": "https://www.superduperinc.com/media/catalog/product/b/k/bk313-00-main.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=540&width=540&canvas=540:540&dpr=2%202x",
+      "description": "Targets 20 areas of listening development involving Auditory Association, Discrimination, Memory, and Reception. Grades PreK-5.",
+      "area": "Auditory Processing",
+      "isPlanned": false,
+      "id": 12
+    },
+    {
+      "name": "Brown Bear, Brown Bear Book",
+      "image": "https://aaspeech.com/wp-content/uploads/2019/06/brown-bear.png",
+      "description": "Builds vocabulary, sentences, and pre-literacy skills",
+      "area": "Language",
+      "isPlanned": false,
+      "id": 13
+    },
+    {
+      "name": "The Voice Monsters",
+      "image": "https://ecdn.teacherspayteachers.com/thumbitem/The-Voice-Monsters-Voice-Therapy-Techniques-1602173963/original-633784-1.jpg",
+      "description": "Voice Therapy Techniques, specific to vocal nodules (Yawn-Sigh, Resonant Voice Therapy). Others are mentioned as well",
+      "area": "Voice",
+      "isPlanned": false,
+      "id": 14
+    },
+    {
+      "name": "Fluency Strategies Visual Support",
+      "image": "https://ecdn.teacherspayteachers.com/thumbitem/Fluency-Strategies-Visual-Support-for-Speech-Therapy-3724874-1632343506/original-3724874-1.jpg",
+      "description": "Use these simple and effective visual supports to supplement your therapy sessions by teaching students strategies for improved speech fluency! This resource contains 2 one-page visual supports for speech fluency (stuttering) strategies. The first visual contains 6 fluency enhancing strategies, while the second visual contains 4 stuttering modification strategies.",
+      "area": "Fluency",
+      "isPlanned": false,
+      "id": 15
     }
   ]
 }

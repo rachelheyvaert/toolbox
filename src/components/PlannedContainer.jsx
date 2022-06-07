@@ -7,13 +7,11 @@ import { Typography } from '@mui/material';
 const PlannedContainer = ({plans, handleRemoveFromPlans}) => {
   const plannedList = plans.map((task)=>{
    return ( 
-    
-   <PlannedCard
+    <PlannedCard
           key={task.id}
           task={task}
           handleRemove={handleRemoveFromPlans}
-           />
-    
+    />
    ) 
   })
 

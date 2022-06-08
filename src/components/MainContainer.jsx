@@ -30,7 +30,6 @@ const MainContainer = () => {
   function handleAddNewActivity(newTask){
     const updatedActvities = [...activities, newTask];
     setActivities(updatedActvities);
-    console.log(newTask)
   }
 
 

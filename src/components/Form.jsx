@@ -35,20 +35,13 @@ const Form =({onAddActivity}) =>{
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        ...formData,
-        name: formData.name,
-        image: formData.image,
-        description: formData.description,
-        area: formData.area,
-        isPlanned: false,
-      }),
+      body: JSON.stringify(
+     formData
+      ),
     })
       .then((r) => r.json())
       .then((newAct) => onAddActivity(newAct));
-     setFormData(formData);
      setFormData(formDataEmpty);
-
   }
 function handleChange(e) {
  const key = e.target.id
@@ -56,7 +49,6 @@ function handleChange(e) {
     ...formData,
 [key]: e.target.value,
   })
-  console.log(formData)
 }
   return (
     <div >
